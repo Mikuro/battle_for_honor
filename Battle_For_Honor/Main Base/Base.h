@@ -1,5 +1,5 @@
 //
-// Created by anton on 02.03.2020.
+//
 //
 
 #ifndef BATTLE_FOR_HONOR_BASE_H
@@ -7,11 +7,10 @@
 
 
 #include "../Units/Unit.h"
+#include "../Battle Field/Field.h"
 
 class Base : Unit{
-    Base(){
-
-    }
+    Base(int x, int y);
 };
 
 
