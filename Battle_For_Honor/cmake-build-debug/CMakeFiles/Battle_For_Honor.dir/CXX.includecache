@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/anton/CLionProjects/Battle_For_Honor/Battle Field/Cell.cpp
-Cell.h
-C:/Users/anton/CLionProjects/Battle_For_Honor/Battle Field/Cell.h
-
 C:/Users/anton/CLionProjects/Battle_For_Honor/Battle Field/Cell.h
 ../Units/Unit.h
 C:/Users/anton/CLionProjects/Battle_For_Honor/Units/Unit.h
@@ -51,10 +47,6 @@ utility
 C:/Users/anton/CLionProjects/Battle_For_Honor/Units/Spearman.h
 Unit.h
 C:/Users/anton/CLionProjects/Battle_For_Honor/Units/Unit.h
-
-C:/Users/anton/CLionProjects/Battle_For_Honor/Units/Swordsman.cpp
-Swordsman.h
-C:/Users/anton/CLionProjects/Battle_For_Honor/Units/Swordsman.h
 
 C:/Users/anton/CLionProjects/Battle_For_Honor/Units/Swordsman.h
 Unit.h

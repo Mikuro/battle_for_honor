@@ -28,6 +28,26 @@ public:
         }
     }
 
+    Field(const Field& field) : lengthX(field.lengthX), lengthY(field.lengthY), limit(field.limit),
+                          object_count(field.object_count){
+        for (int i=0; i<field.lengthY; i++) {
+            this->field[i] = new Cell [field.lengthX];
+            for (int j=0; j<field.lengthX; j++) {
+                this->field[i][j] = field.field[i][j];
+            }
+        }
+    }
+
+    Field(const Field&& field) : lengthX(field.lengthX), lengthY(field.lengthY), limit(field.limit),
+                                object_count(field.object_count){
+        for (int i=0; i<field.lengthY; i++) {
+            this->field[i] = new Cell [field.lengthX];
+            for (int j=0; j<field.lengthX; j++)
+                this->field[i][j] = field.field[i][j];
+        }
+    }
+
+
     ~Field()
     {
         for (int i = 0; i < lengthY; i++)
