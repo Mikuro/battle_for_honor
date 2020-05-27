@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="BattleForHonour"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BattleForHonour">
+				<Option output="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/BattleForHonour.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 BattleForHonour"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BattleForHonour/fast">
+				<Option output="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/BattleForHonour.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 BattleForHonour/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/anton/CLionProjects/BattleForHonour/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/Armor.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/ArmorFlyWeight.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/ArmorFlyWeight.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/LeatherArmor.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/PlateMail.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/Robe.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Armor/VladimirOffering.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Exceptions/StackExceptions.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameFacade.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/FieldCell.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/FieldCell.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameFieldIterator.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameInfo.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/BigGame.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/MidGame.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/PlayerState.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/SmallGame.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Landscapes/Desert.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Landscapes/Landscape.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Landscapes/LandscapeProxy.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Landscapes/LandscapeProxy.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Landscapes/Swamp.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Landscapes/Wasteland.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/FileLogger.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogFormat.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogProxy.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logend.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logger.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoFormat.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoLogger.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/TagFormat.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/TerminalLogger.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/TimeFormat.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Base.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Base.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/GameObject.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/GameObject.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/ArcherStrategy.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/Archery.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/DruidStrategy.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/Hospital.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/InfantryStrategy.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/NeutralObject.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/NeutralObjectStrategy.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/Tent.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/Well.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Archer/Archer.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Archer/CrossBowMan.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Archer/LongBowMan.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Druid/Druid.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Druid/Hermit.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Druid/Priestess.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Infantry/Infantry.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Infantry/SpearMan.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Infantry/SwordMan.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Observers/Observers.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Point.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Point.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Specs.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/CommandInterpreter.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/AttackCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/AttackUnitCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/Command.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CommandMemento.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CreateBaseCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CreateCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CreateUnitCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ExitCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/LoadCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/MoveCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/MoveUnitCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/NewCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/NewGameCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/SaveCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ShowBaseCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ShowCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ShowUnitCommand.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/ConnectCI.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/AbolishMagic.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Bow.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Spear.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/StarFall.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Sword.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/main.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

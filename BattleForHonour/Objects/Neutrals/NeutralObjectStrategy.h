@@ -1,0 +1,12 @@
+#ifndef BATTLEFORHONOUR_NEUTRALOBJECTSTRATEGY_H
+#define BATTLEFORHONOUR_NEUTRALOBJECTSTRATEGY_H
+
+
+class NeutralObjectStrategy {
+
+public:
+    virtual int getUnitTypeFactor()=0;
+
+};
+
+#endif //BATTLEFORHONOUR_NEUTRALOBJECTSTRATEGY_H
