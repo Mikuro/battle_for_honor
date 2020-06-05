@@ -5,12 +5,13 @@
 #include "../../../Weapon/Bow.h"
 #include "../../Unit.h"
 #include "../../../Weapon/WeaponFlyWeight.h"
-#include "../../../Armor/ArmorFlyWeight.h"
+#include "../../../Armor/ArmorFlyweight.h"
 
 class Archer: public Unit{
 
 public:
-    Archer(Armor &armor, int health): Unit(UnitType::ARCHER, armor,*WeaponFlyWeight::getFlyWeight<Bow>(), health){}
+    Archer(Armor &armor, int health):
+        Unit(UnitType::ARCHER, armor,*WeaponFlyWeight::getFlyWeight<Bow>(), health){}
 };
 
 

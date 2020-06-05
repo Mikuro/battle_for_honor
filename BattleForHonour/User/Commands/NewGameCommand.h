@@ -9,7 +9,7 @@ class NewGameCommand: public Command {
 public:
 
     explicit NewGameCommand(){}
-    void execute(GameInfo &gameInfo) override{
+    void execute(GameState &gameInfo) override{
         gameInfo.newGame();
     }
 
@@ -19,19 +19,20 @@ class NewGameCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-        return cmd.size() == 1 && cmd[0] == "game";
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() == 1 && terminal[0] == "game";
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
-            return CommandPtr(new NewGameCommand());
+        if (canHandle(terminal)){
+            return std::unique_ptr<Command>(new NewGameCommand());
         }
 
-        if (next) return next->handle(cmd);
-        return std::make_unique<Command>();
+        if (next)
+            return next->handle(terminal);
 
+        return std::make_unique<Command>();
     }
 
 };

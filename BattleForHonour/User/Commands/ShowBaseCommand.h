@@ -4,7 +4,6 @@
 
 #include "Command.h"
 #include "../../Point.h"
-#include "../../Specs.h"
 
 class ShowBaseCommand: public Command {
 
@@ -15,13 +14,13 @@ private:
 public:
 
     explicit ShowBaseCommand(Point p): basePosition(p){}
-    void execute(GameInfo &gameInfo) override{
+    void execute(GameState &gameInfo) override{
 
         auto object = gameInfo.getField().getCell(basePosition)->getObject();
         if (object && object->getType() == ObjectType::BASE){
 
             auto base = dynamic_cast<Base*>(object);
-            std::cout << "Base info: " << std::endl
+            std::cout << "Base: " << std::endl
                       << "\tHP: " << base->getHealth() << std::endl
                       << "\tArmor: " << base->getArmor() << std::endl
                       << "\tMax Objects Count: " << base->getMaxObjectsCount() << std::endl;
@@ -39,24 +38,25 @@ class ShowBaseCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
+    bool canHandle(std::vector<std::string> &terminal) override{
 
-        return cmd.size() == 3 && cmd[0] == "base";
+        return terminal.size() == 3 && terminal[0] == "base";
 
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
-            int x = Specs::StrToInt(cmd[1]);
-            int y = Specs::StrToInt(cmd[2]);
+        if (canHandle(terminal)){
+            int x = convertStr(terminal[1]);
+            int y = convertStr(terminal[2]);
             Point basePosition(x, y);
-            return CommandPtr(new ShowBaseCommand(basePosition));
+            return std::unique_ptr<Command>(new ShowBaseCommand(basePosition));
         }
 
-        if (next) return next->handle(cmd);
-        return std::make_unique<Command>();
+        if (next)
+            return next->handle(terminal);
 
+        return std::make_unique<Command>();
     }
 
 };

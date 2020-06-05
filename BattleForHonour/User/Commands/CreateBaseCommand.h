@@ -3,34 +3,33 @@
 
 
 #include "Command.h"
-#include "../../Armor/ArmorFlyWeight.h"
-#include "../../Armor/LeatherArmor.h"
-#include "../../Specs.h"
+#include "../../Armor/ArmorFlyweight.h"
+#include "../../Armor/Armor.h"
 
 class CreateBaseCommand: public Command {
 
 private:
 
-    Point basePosition;
+    Point basePos;
 
 public:
 
-    explicit CreateBaseCommand(Point position): basePosition(position){}
-    void execute(GameInfo &gameInfo) override{
+    explicit CreateBaseCommand(Point position): basePos(position){}
+    void execute(GameState &gameState) override{
 
-        auto *base = new Base(100, *ArmorFlyWeight::getFlyWeight<LeatherArmor>());
-        if (gameInfo.setNowPlayerBase(base)) {
-            gameInfo.getField().addBase(base, basePosition);
-            game::log << "Command create base" << game::logend;
+        auto *base = new Base(100, *ArmorFlyweight::getFlyweight<LeatherArmor>());
+        if (gameState.setNowPlayerBase(base)) {
+            gameState.getField().addBase(base, basePos);
+            game::log << "Command to create base" << game::logend;
         } else
             game::log << "This player already has base" << game::logend;
     }
 
-    CommandMemento * getMemento() const override{
+    [[nodiscard]] CommandSnapshot * getSnapshot() const override{
 
-        std::stringstream ss;
-        ss << "create base " << basePosition.x << " " << basePosition.y << std::endl;
-        return new CommandMemento(ss.str());
+        std::stringstream stream;
+        stream << "create base " << basePos.x << " " << basePos.y << std::endl;
+        return new CommandSnapshot(stream.str());
 
     }
 
@@ -40,26 +39,25 @@ class CreateBaseCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
+    bool canHandle(std::vector<std::string> &terminal) override{
 
-        return cmd.size() == 3 && cmd[0] == "base";
+        return terminal.size() == 3 && terminal[0] == "base";
 
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override {
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override {
 
-        if (canHandle(cmd)){
-
-            int x = Specs::StrToInt(cmd[1]);
-            int y = Specs::StrToInt(cmd[2]);
+        if (canHandle(terminal)){
+            int x = convertStr(terminal[1]);
+            int y = convertStr(terminal[2]);
             Point basePosition(x, y);
-            return CommandPtr(new CreateBaseCommand(basePosition));
-
+            return std::unique_ptr<Command>(new CreateBaseCommand(basePosition));
         }
 
-        if (next) return next->handle(cmd);
-        return std::make_unique<Command>();
+        if (next)
+            return next->handle(terminal);
 
+        return std::make_unique<Command>();
     }
 };
 

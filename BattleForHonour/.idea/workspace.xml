@@ -45,12 +45,13 @@
   <component name="ProjectId" id="1c3XrB4YvpcNmG3Q6Qw3ljeAVkl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="OCFindUsagesOptions.isSearchForTextOccurrences" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="nodejs.jest.jest_package" value="" />
@@ -67,7 +68,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="BattleForHonour" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BattleForHonour" TARGET_NAME="BattleForHonour" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BattleForHonour" RUN_TARGET_NAME="BattleForHonour">
+    <configuration name="BattleForHonour" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BattleForHonour" TARGET_NAME="BattleForHonour" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BattleForHonour" RUN_TARGET_NAME="BattleForHonour">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -98,22 +99,26 @@
       <workItem from="1590366041667" duration="3259000" />
       <workItem from="1590437951288" duration="142000" />
       <workItem from="1590438348265" duration="12977000" />
-      <workItem from="1590542081036" duration="3500000" />
+      <workItem from="1590542081036" duration="5111000" />
+      <workItem from="1591231746602" duration="8477000" />
+      <workItem from="1591245200465" duration="598000" />
+      <workItem from="1591306185010" duration="7687000" />
+      <workItem from="1591317193227" duration="5939000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589805381101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589805381101" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590543838591">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591323611672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590543838591" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591323611672" />
     <state x="718" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589882857316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -122,22 +127,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589805581983" />
-    <state width="1877" height="245" key="GridCell.Tab.0.bottom" timestamp="1590544947079">
+    <state width="1877" height="175" key="GridCell.Tab.0.bottom" timestamp="1591326566182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590544947079" />
-    <state width="1877" height="245" key="GridCell.Tab.0.center" timestamp="1590544947079">
+    <state width="1877" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
+    <state width="1877" height="175" key="GridCell.Tab.0.center" timestamp="1591326566182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590544947079" />
-    <state width="1877" height="245" key="GridCell.Tab.0.left" timestamp="1590544947078">
+    <state width="1877" height="175" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
+    <state width="1877" height="175" key="GridCell.Tab.0.left" timestamp="1591326566182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590544947078" />
-    <state width="1877" height="245" key="GridCell.Tab.0.right" timestamp="1590544947079">
+    <state width="1877" height="175" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
+    <state width="1877" height="175" key="GridCell.Tab.0.right" timestamp="1591326566182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590544947079" />
+    <state width="1877" height="175" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1590438003591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -150,9 +155,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="701" y="163" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590543614748" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1590366590573">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1591322278811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590366590573" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591322278811" />
   </component>
 </project>

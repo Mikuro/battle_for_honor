@@ -13,16 +13,28 @@ private:
 public:
 
     explicit ShowUnitCommand(Point p): unitPosition(p){}
-    void execute(GameInfo &gameInfo) override{
+    void execute(GameState &gameInfo) override{
 
         auto object = gameInfo.getField().getCell(unitPosition)->getObject();
         if (object && object->getType() == ObjectType::UNIT){
 
             auto unit = dynamic_cast<Unit*>(object);
-            std::cout << "Unit info: " << std::endl
-                      << "\tHP: " << unit->getHealth() << std::endl
-                      << "\tWeapon: " << unit->getWeapon() << std::endl
-                      << "\tArmor: " << unit->getArmor() << std::endl;
+            std::cout << "Unit: " << std::endl
+                      << "\nHP: " << unit->getHealth() << std::endl
+                      << "\nArmor: " << unit->getArmor() << std::endl
+                      << "\nWeapon: " << unit->getWeapon() << std::endl
+                      << "\nUnit class: ";
+            switch(unit->getUnitType()){
+                case UnitType::ARCHER:
+                    std::cout << "Archer" << std::endl;
+                    break;
+                case UnitType::DRUID:
+                    std::cout << "Druid" << std::endl;
+                    break;
+                case UnitType::INFANTRY:
+                    std::cout << "Infantry" << std::endl;
+                    break;
+            }
 
             game::log << "Command show unit" << game::logend;
 
@@ -38,25 +50,25 @@ class ShowUnitCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
+    bool canHandle(std::vector<std::string> &terminal) override{
 
-        return cmd.size() == 3 && cmd[0] == "unit";
+        return terminal.size() == 3 && terminal[0] == "unit";
 
     }
 
-    virtual CommandPtr handle(std::vector<std::string> &cmd){
+    virtual std::unique_ptr<Command> handle(std::vector<std::string> &terminal){
 
-        if (canHandle(cmd)){
-            int x = Specs::StrToInt(cmd[1]);
-            int y = Specs::StrToInt(cmd[2]);
+        if (canHandle(terminal)){
+            int x = convertStr(terminal[1]);
+            int y = convertStr(terminal[2]);
             Point unitPosition(x, y);
-            return CommandPtr(new ShowUnitCommand(unitPosition));
+            return std::unique_ptr<Command>(new ShowUnitCommand(unitPosition));
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
 
         return std::make_unique<Command>();
-
     }
 
 };

@@ -3,14 +3,8 @@
 
 
 #include <ostream>
+#include "WeaponType.h"
 
-enum class WeaponType{
-
-    MAGIC,
-    PHYSIC,
-    FAR,
-
-};
 
 class Weapon {
 

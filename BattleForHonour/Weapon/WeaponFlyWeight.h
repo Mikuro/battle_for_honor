@@ -14,26 +14,23 @@ private:
 
 public:
 
-    template <typename T>
-    static T* getFlyWeight(){
+    template <typename Type>
+    static Type* getFlyWeight(){
 
         if (!self) self = new WeaponFlyWeight();
 
-        T needWeapon;
+        Type needWeapon;
         for (auto *weapon: self->weapons){
 
             if (needWeapon == *weapon){
-                return static_cast<T*>(weapon);
+                return static_cast<Type*>(weapon);
             }
-
         }
 
-        T *weaponPtr = new T();
-        self->weapons.push_back(weaponPtr);
-        return weaponPtr;
-
+        Type *tmp = new Type();
+        self->weapons.push_back(tmp);
+        return tmp;
     }
-
 };
 
 

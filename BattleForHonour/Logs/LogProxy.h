@@ -12,13 +12,13 @@ private:
 
     Logger *logger;
     LogFormat *logFormat;
-    bool isFirstInLine = true;
+    bool firstLine = true;
 
     void log(std::string s){
-        if (isFirstInLine) {
+        if (firstLine) {
             std::string formatted = logFormat->getFormatted(s);
             logger->log(formatted);
-            isFirstInLine = false;
+            firstLine = false;
         } else{
             logger->log(s);
         }
@@ -26,7 +26,10 @@ private:
 
 public:
 
-    LogProxy(): logger(new NoLogger()), logFormat(new NoFormat()){}
+    LogProxy():
+    logger(new NoLogger()),
+    logFormat(new NoFormat()){}
+
     ~LogProxy(){
         delete logger;
         delete logFormat;
@@ -44,20 +47,20 @@ public:
 
     friend LogProxy& operator<< (LogProxy &logger, const game::Logend &l){
         logger.log("\n");
-        logger.isFirstInLine = true;
+        logger.firstLine = true;
         return logger;
     }
 
-    void setLogger(Logger *logger1){
+    void setLogger(Logger *tmp){
 
         delete logger;
-        logger = logger1;
+        logger = tmp;
     }
 
-    void setLogFormat(LogFormat *logFormat1){
+    void setLogFormat(LogFormat *tmp){
 
         delete logFormat;
-        logFormat = logFormat1;
+        logFormat = tmp;
 
     }
 

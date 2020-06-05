@@ -8,9 +8,8 @@
 class Priestess: public Druid{
 
 public:
-
-    Priestess(): Druid(*WeaponFlyWeight::getFlyWeight<StarFall>(), 20){}
-
+    Priestess():
+        Druid(*WeaponFlyWeight::getFlyWeight<StarFall>(), 20){}
 };
 
 #endif //BATTLEFORHONOUR_PRIESTESS_H

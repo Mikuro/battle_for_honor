@@ -8,9 +8,8 @@
 class Hermit: public Druid{
 
 public:
-
-    Hermit(): Druid(*WeaponFlyWeight::getFlyWeight<AbolishMagic>(), 100){}
-
+    Hermit():
+        Druid(*WeaponFlyWeight::getFlyWeight<AbolishMagic>(), 100){}
 };
 
 #endif //BATTLEFORHONOUR_HERMIT_H

@@ -37,29 +37,26 @@ public:
     bool addObject(GameObject *object, Point p);
 
     void moveObject(const Point &p1, const Point &p2);
-    void moveObject(GameObject *object, const Point &p2);
 
-    int getHeight() const;
-    int getWidth() const;
-    FieldCell *getCell(const Point &p) const;
+
+    [[nodiscard]] FieldCell *getCell(const Point &p) const;
 
     friend std::ostream& operator<< (std::ostream &stream, const GameField &field);
 
     GameFieldIterator begin(){ return GameFieldIterator(Point(0, 0), field, fieldHeight, fieldWidth); }
     GameFieldIterator end(){ return GameFieldIterator(Point(0, fieldHeight), field, fieldHeight, fieldWidth); }
 
-    void onUnitAttack(Unit *unit, Unit *other) override;
+    void onUnitAttack(Unit *unit, Unit *enemy) override;
     void onUnitMove(Unit *unit, Point p) override;
     void onUnitDestroy(Unit *unit) override;
     void onUnitDamaged(Unit *unit) override {}
     void onUnitHeal(Unit *unit) override {}
 
     void onBaseNewUnitCreated(Unit *unit, Point position) override;
-
     bool addBase(Base *base, Point position);
     bool addBase(Base *base, int x, int y);
 
-    bool isInField(const Point &p) const;
+    [[nodiscard]] bool checkBorder(const Point &p) const;
 
 };
 

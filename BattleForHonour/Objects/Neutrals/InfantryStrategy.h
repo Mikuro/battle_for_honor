@@ -10,7 +10,6 @@ public:
     int getUnitTypeFactor() override {
         return 3;
     }
-
 };
 
 

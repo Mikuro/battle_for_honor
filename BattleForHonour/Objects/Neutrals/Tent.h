@@ -3,6 +3,8 @@
 
 
 #include "NeutralObject.h"
+#include "../Units/Druid/Hermit.h"
+#include "../Units/Druid/Priestess.h"
 
 class Tent: public NeutralObject {
 
@@ -19,6 +21,8 @@ public:
     void applyTo(Unit &unit) override {
 
         unit.heal(50*strategy->getUnitTypeFactor());
+        Priestess priestess;
+        unit = priestess;
 
     }
 

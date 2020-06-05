@@ -12,64 +12,60 @@ private:
 
 public:
 
-    explicit SaveCommand(std::string &filename): fs(filename){
-
+    explicit SaveCommand(std::string &filename){
+        fs = std::ofstream(filename);
         game::log << "File opened" << game::logend;
-        game::log << "File is open: " << fs.is_open() << game::logend;
+        game::log << "File is opened: " << fs.is_open() << game::logend;
 
     }
-    void execute(GameInfo &gameInfo) override{
+    void execute(GameState &gameState) override{
 
-        std::hash<std::string> hashFunc;
+        std::hash<std::string> toHash;
         unsigned long int fileHash = 0;
 
         game::log << "Saving..." << game::logend;
-        auto history = gameInfo.getHistory();
 
-        for (auto m: history){
+        auto actions = gameState.getActions();
 
-            fileHash += m->getHash(hashFunc);
-
+        for (auto elem: actions){
+            fileHash += elem->getHash(toHash);
         }
 
         fs << fileHash << std::endl;
 
-        for (auto m: history){
-
-            m->saveToFile(fs);
-
+        for (auto elem: actions){
+            elem->saveToFile(fs);
         }
 
-        game::log << "Saved commands count: " << gameInfo.getHistory().size() << game::logend;
+        game::log << "Saved commands count: " << gameState.getActions().size() << game::logend;
 
     }
 
     ~SaveCommand() override{
         game::log << "File closed" << game::logend;
         fs.close();
-        game::log << "File is open: " << fs.is_open() << game::logend;
+        game::log << "File is opened: " << fs.is_open() << game::logend;
     }
 
 };
 
 class SaveCommandHandler: public CommandHandler{
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-
-        return cmd.size() == 2 && cmd[0] == "save";
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() == 2 && terminal[0] == "save";
 
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
-            return CommandPtr(new SaveCommand(cmd[1]));
+        if (canHandle(terminal)){
+            return std::unique_ptr<Command>(new SaveCommand(terminal[1]));
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
 
         return std::make_unique<Command>();
-
     }
 
 };

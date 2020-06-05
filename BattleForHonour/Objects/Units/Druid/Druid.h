@@ -3,17 +3,16 @@
 
 
 #include "../../Unit.h"
-#include "../../../Armor/Robe.h"
+#include "../../../Armor/Armor.h"
 #include "../../../Weapon/AbolishMagic.h"
 #include "../../../Weapon/WeaponFlyWeight.h"
-#include "../../../Armor/ArmorFlyWeight.h"
+#include "../../../Armor/ArmorFlyweight.h"
 
 class Druid: public Unit{
 
 public:
-
-    Druid(Weapon &weapon, int health): Unit(UnitType::DRUID, *ArmorFlyWeight::getFlyWeight<Robe>(), weapon, health){}
-
+    Druid(Weapon &weapon, int health):
+        Unit(UnitType::DRUID, *ArmorFlyweight::getFlyweight<Robe>(), weapon, health){}
 };
 
 

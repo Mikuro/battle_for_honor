@@ -26,12 +26,12 @@ public:
 
     ConnectCI(){
 
+        newHandler = new NewCommandHandler();
         attackHandler = new AttackCommandHandler();
         createHandler = new CreateCommandHandler();
         moveHandler = new MoveCommandHandler();
         showHandler = new ShowCommandHandler();
         exitHandler = new ExitCommandHandler();
-        newHandler = new NewCommandHandler();
 
 
         attackHandler->setNext(createHandler);
@@ -41,26 +41,24 @@ public:
         exitHandler->setNext(newHandler);
     }
 
-    CommandPtr handle(std::string commandString){
+    std::unique_ptr<Command> handle(std::string commandString){
 
-        std::vector <std::string> commandSplitted;
-        std::stringstream ss(commandString);
+        std::vector <std::string> splitCommands;
+        std::stringstream stream(commandString);
         std::string commandWord;
-        while (ss >> commandWord)
-            commandSplitted.push_back(commandWord);
+        while (stream >> commandWord)
+            splitCommands.push_back(commandWord);
 
-        return attackHandler->handle(commandSplitted);
+        return attackHandler->handle(splitCommands);
 
     }
 
     ~ConnectCI(){
-
         delete attackHandler;
         delete createHandler;
         delete moveHandler;
         delete showHandler;
         delete exitHandler;
-
     }
 
 

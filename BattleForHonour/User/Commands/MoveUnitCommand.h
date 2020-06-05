@@ -3,9 +3,7 @@
 
 
 #include "Command.h"
-#include "../../Specs.h"
 
-// move unit fromX fromY toX toY
 class MoveUnitCommand: public Command {
 
 private:
@@ -15,23 +13,25 @@ private:
 
 public:
 
-    MoveUnitCommand(Point from, Point to): from(from), to(to){}
-    void execute(GameInfo &gameInfo) override{
+    MoveUnitCommand(Point from, Point to):
+        from(from),
+        to(to){}
+    void execute(GameState &gameInfo) override{
 
-        auto object1 = gameInfo.getField().getCell(from)->getObject();
-        if (object1 && object1->getType() == ObjectType::UNIT){
-            auto unit1 = dynamic_cast<Unit *>(object1);
+        auto object = gameInfo.getField().getCell(from)->getObject();
+        if (object && object->getType() == ObjectType::UNIT){
+            auto unit1 = dynamic_cast<Unit *>(object);
             unit1->move(to);
-            game::log << "Command unite moved" << game::logend;
+            game::log << "Command to unit moved" << game::logend;
         } else
             game::log << "No unit on this cell" << game::logend;
     }
 
-    CommandMemento * getMemento() const override{
+    [[nodiscard]] CommandSnapshot * getSnapshot() const override{
 
-        std::stringstream ss;
-        ss << "move unit " << from.x << " " << from.y << " " << to.x << " " << to.y << std::endl;
-        return new CommandMemento(ss.str());
+        std::stringstream stream;
+        stream << "move unit " << from.x << " " << from.y << " " << to.x << " " << to.y << std::endl;
+        return new CommandSnapshot(stream.str());
 
     }
 
@@ -41,27 +41,27 @@ class MoveUnitCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
+    bool canHandle(std::vector<std::string> &terminal) override{
 
-        return cmd.size() == 5 && cmd[0] == "unit";
+        return terminal.size() == 5 && terminal[0] == "unit";
 
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
+        if (canHandle(terminal)){
 
-            int x1 = Specs::StrToInt(cmd[1]);
-            int y1 = Specs::StrToInt(cmd[2]);
-            int x2 = Specs::StrToInt(cmd[3]);
-            int y2 = Specs::StrToInt(cmd[4]);
+            int x1 = convertStr(terminal[1]);
+            int y1 = convertStr(terminal[2]);
+            int x2 = convertStr(terminal[3]);
+            int y2 = convertStr(terminal[4]);
             Point from(x1, y1);
             Point to(x2, y2);
-            return CommandPtr(new MoveUnitCommand(from, to));
-
+            return std::unique_ptr<Command>(new MoveUnitCommand(from, to));
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
         return std::make_unique<Command>();
 
     }

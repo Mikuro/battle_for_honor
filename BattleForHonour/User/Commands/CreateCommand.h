@@ -10,30 +10,25 @@ class CreateCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-
-        return cmd.size() > 1 && cmd[0] == "create";
-
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() > 1 && terminal[0] == "create";
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
+        if (canHandle(terminal)){
+            terminal.erase(terminal.begin());
 
-            cmd.erase(cmd.begin());
+            auto handleUnit = new CreateUnitCommandHandler();
+            auto handleBase = new CreateBaseCommandHandler();
+            handleUnit->setNext(handleBase);
 
-            auto handle1 = new CreateUnitCommandHandler();
-            auto handle2 = new CreateBaseCommandHandler();
-
-            handle1->setNext(handle2);
-
-            return handle1->handle(cmd);
-
+            return handleUnit->handle(terminal);
         }
+        if (next)
+            return next->handle(terminal);
 
-        if (next) return next->handle(cmd);
         return std::make_unique<Command>();
-
     }
 
 };

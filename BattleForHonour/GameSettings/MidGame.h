@@ -15,21 +15,19 @@ public:
 
     MidGame(): GameRule(10, 10), nowState(new FirstPlayer){}
 
-    bool isOver(GameInfo &gameInfo) override {
+    bool isOver(GameState &gameInfo) override {
         return false;
     }
 
-       int nextUser(GameInfo &gameInfo) override {
-
-       int nowPlayerIndex = gameInfo.getNowPlayerIndex()+nowState->getNextPlayerDelta();
-       nowPlayerIndex %= gameInfo.getBases().size();
-       auto nextState = nowState->getNextPlayerState();
-       delete nowState;
-       nowState = nextState;
-       if (nowState == nullptr)
-           nowState = new FirstPlayer;
-       return nowPlayerIndex;
-
+    int nextUser(GameState &gameInfo) override {
+        int nowPlayerIndex = gameInfo.getNowPlayerIndex()+nowState->getNextPlayerDelta();
+        nowPlayerIndex %= gameInfo.getBases().size();
+        auto nextState = nowState->getNextPlayerState();
+        delete nowState;
+        nowState = nextState;
+        if (nowState == nullptr)
+            nowState = new FirstPlayer;
+        return nowPlayerIndex;
     }
 
 };

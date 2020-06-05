@@ -3,20 +3,23 @@ project(BattleForHonour)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(BattleForHonour main.cpp GameField/GameField.cpp GameField/GameField.h
-        Objects/Unit.cpp Objects/Unit.h
+add_executable(BattleForHonour
+        main.cpp
+        GameField/GameField.cpp
+        GameField/GameField.h
+        Objects/Unit.cpp
+        Objects/Unit.h
         Weapon/Weapon.h
-        Armor/Armor.h Point.cpp
+        Armor/Armor.h
+        Point.cpp
         Point.h
         GameField/GameFieldIterator.h
         Objects/Units/Infantry/Infantry.h
         Weapon/Sword.h
         Weapon/AbolishMagic.h
         Weapon/Bow.h
-        Armor/Robe.h
-        Armor/PlateMail.h
-        Armor/LeatherArmor.h
-        Armor/VladimirOffering.h
+        Weapon/WeaponType.h
+        Armor/ArmorType.h
         Objects/Units/Druid/Druid.h
         Objects/Units/Archer/Archer.h
         Weapon/StarFall.h
@@ -29,28 +32,25 @@ add_executable(BattleForHonour main.cpp GameField/GameField.cpp GameField/GameFi
         Objects/Units/Druid/Hermit.h
         GameField/FieldCell.cpp
         GameField/FieldCell.h
-        Landscapes/Landscape.h
+        Terrains/Terrain.h
         Objects/Base.cpp
         Objects/Base.h
         Objects/Neutrals/NeutralObject.h
         Objects/GameObject.cpp
         Objects/GameObject.h
-        Landscapes/Wasteland.h
-        Landscapes/Swamp.h
-        Landscapes/Desert.h
         Objects/Neutrals/Tent.h
         Objects/Neutrals/Hospital.h
         Objects/Neutrals/Well.h
-        Landscapes/LandscapeProxy.cpp
-        Landscapes/LandscapeProxy.h
+        Terrains/TerrainProxy.cpp
+        Terrains/TerrainProxy.h
         Objects/Neutrals/Archery.h
         Objects/Neutrals/NeutralObjectStrategy.h
         Objects/Neutrals/NeutralObjectStrategy.h
         Objects/Neutrals/ArcherStrategy.h
         Objects/Neutrals/InfantryStrategy.h
         Objects/Neutrals/DruidStrategy.h
-        Armor/ArmorFlyWeight.h Weapon/WeaponFlyWeight.h
-        Armor/ArmorFlyWeight.cpp
+        Armor/ArmorFlyweight.h
+        Weapon/WeaponFlyWeight.h
         Weapon/WeaponFlyWeight.cpp
         Observers/Observers.h
         User/Commands/Command.h
@@ -62,29 +62,26 @@ add_executable(BattleForHonour main.cpp GameField/GameField.cpp GameField/GameFi
         User/Commands/ShowCommand.h
         User/Commands/CreateCommand.h
         User/Commands/MoveCommand.h
+        User/Commands/SkipCommand.h
         GameFacade.h
-        GameInfo.h
+        GameState.h
         User/Commands/AttackCommand.h
         User/Commands/AttackUnitCommand.h
         Logs/LogProxy.h
         Logs/Logger.h
         Logs/FileLogger.h
-        Logs/TerminalLogger.h
+        Logs/CmdLogger.h
         Logs/NoLogger.h
         Logs/LogFormat.h
-        Logs/TimeFormat.h
-        Logs/TagFormat.h
         Logs/NoFormat.h
-        Logs/log.cpp
         Logs/log.h
         User/Commands/ExitCommand.h
         Logs/Logend.h
         User/Commands/SaveCommand.h
         User/Commands/LoadCommand.h
-        User/Commands/CommandMemento.h
+        User/Commands/CommandSnapshot.h
         User/CommandInterpreter.h
         User/ConnectCI.h
-        Specs.h
         GameSettings/SmallGame.h
         GameSettings/MidGame.h
         GameSettings/GameRule.h
@@ -93,4 +90,4 @@ add_executable(BattleForHonour main.cpp GameField/GameField.cpp GameField/GameFi
         GameSettings/PlayerState.h
         GameSettings/BigGame.h
         Exceptions/StackExceptions.h
-        )
+        Objects/UnitType.h User/Commands/SkipCommand.h Logs/log.cpp)

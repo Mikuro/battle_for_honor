@@ -1,15 +1,12 @@
 #ifndef BATTLEFORHONOUR_EXITCOMMAND_H
 #define BATTLEFORHONOUR_EXITCOMMAND_H
 
-
 #include "Command.h"
 
 class ExitCommand: public Command{
 
-    void execute(GameInfo &gameInfo) override{
-
+    void execute(GameState &gameState) override{
         exit(0);
-
     }
 
 };
@@ -18,22 +15,19 @@ class ExitCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-
-        return cmd.size() == 1 && cmd[0] == "exit";
-
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() == 1 && terminal[0] == "exit";
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
-
-            cmd.erase(cmd.begin());
-
-            return CommandPtr(new ExitCommand());
+        if (canHandle(terminal)){
+            terminal.erase(terminal.begin());
+            return std::unique_ptr<Command>(new ExitCommand());
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
 
         return std::make_unique<Command>();
 

@@ -2,15 +2,15 @@
 #define BATTLEFORHONOUR_GAMERULE_H
 
 
-class GameInfo;
+class GameState;
 
 class GameRule {
 
 public:
     int fieldWidth;
     int fieldHeight;
-    virtual bool isOver(GameInfo &gameInfo)=0;
-    virtual int nextUser(GameInfo &gameInfo)=0;
+    virtual bool isOver(GameState &gameInfo)=0;
+    virtual int nextUser(GameState &gameInfo)=0;
 
     GameRule(int fieldWidth, int fieldHeight):
             fieldWidth(fieldWidth),

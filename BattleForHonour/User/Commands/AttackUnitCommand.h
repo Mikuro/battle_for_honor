@@ -3,7 +3,6 @@
 
 
 #include "Command.h"
-#include "../../Specs.h"
 
 class AttackUnitCommand: public Command{
 
@@ -15,10 +14,10 @@ private:
 public:
 
     AttackUnitCommand(Point from, Point to): from(from), to(to){}
-    void execute(GameInfo &gameInfo) override{
+    void execute(GameState &gameState) override{
 
-        auto object1 = gameInfo.getField().getCell(from)->getObject();
-        auto object2 = gameInfo.getField().getCell(to)->getObject();
+        auto object1 = gameState.getField().getCell(from)->getObject();
+        auto object2 = gameState.getField().getCell(to)->getObject();
         if (object1 && object1->getType() == ObjectType::UNIT && object1 && object1->getType() == ObjectType::UNIT) {
             auto unit1 = dynamic_cast<Unit *>(object1);
             auto unit2 = dynamic_cast<Unit *>(object2);
@@ -29,12 +28,10 @@ public:
 
     }
 
-    CommandMemento * getMemento() const override{
-
-        std::stringstream ss;
-        ss << "attack unit " << from.x << " " << from.y << " " << to.x << " " << to.y << std::endl;
-        return new CommandMemento(ss.str());
-
+    [[nodiscard]] CommandSnapshot * getSnapshot() const override{
+        std::stringstream stream;
+        stream << "attack unit " << from.x << " " << from.y << " " << to.x << " " << to.y << std::endl;
+        return new CommandSnapshot(stream.str());
     }
 
 };
@@ -43,27 +40,24 @@ class AttackUnitCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-
-        return cmd.size() == 5 && cmd[0] == "unit";
-
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() == 5 && terminal[0] == "unit";
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
-
-            int x1 = Specs::StrToInt(cmd[1]);
-            int y1 = Specs::StrToInt(cmd[2]);
-            int x2 = Specs::StrToInt(cmd[3]);
-            int y2 = Specs::StrToInt(cmd[4]);
-            Point from(x1, y1);
-            Point to(x2, y2);
-            return CommandPtr(new AttackUnitCommand(from, to));
-
+        if (canHandle(terminal)){
+            int x1 = convertStr(terminal[1]);
+            int y1 = convertStr(terminal[2]);
+            int x2 = convertStr(terminal[3]);
+            int y2 = convertStr(terminal[4]);
+            Point from((int)x1, (int)y1);
+            Point to((int)x2, (int)y2);
+            return std::unique_ptr<Command>(new AttackUnitCommand(from, to));
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
         return std::make_unique<Command>();
 
     }

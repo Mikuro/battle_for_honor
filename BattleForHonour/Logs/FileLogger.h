@@ -13,22 +13,18 @@ private:
 
 public:
 
-    explicit FileLogger(std::string filePath): fileStream(filePath){}
+    explicit FileLogger(const std::string& filePath): fileStream(filePath){}
 
     ~FileLogger() override {
         fileStream.close();
     }
 
-    void log(std::string &s) override{
-
-        fileStream << s;
-
+    void log(std::string &fs) override{
+        fileStream << fs;
     }
 
     void log(game::Logend &l) override{
-
         fileStream.flush();
-
     }
 
 };

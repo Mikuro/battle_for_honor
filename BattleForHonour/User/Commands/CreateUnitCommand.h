@@ -6,47 +6,47 @@
 #include "../../Objects/Units/Infantry/SwordMan.h"
 #include "../../Objects/Units/Archer/CrossBowMan.h"
 #include "../../Objects/Units/Druid/Hermit.h"
-#include "../../Specs.h"
+#include "../../Objects/Units/Archer/LongBowMan.h"
 
 class CreateUnitCommand: public Command {
 
 private:
 
-    Point unitPosition;
+    Point unitPos;
     UnitType unitType;
 
 public:
 
-    explicit CreateUnitCommand(Point position, UnitType unitType): unitPosition(position), unitType(unitType){}
-    void execute(GameInfo &gameInfo) override{
+    explicit CreateUnitCommand(Point position, UnitType unitType): unitPos(position), unitType(unitType){}
+    void execute(GameState &gameState) override{
 
-        if (!gameInfo.getNowPlayerBase()){
-            game::log << "Can't create unit without base" << game::logend;
+        if (!gameState.getNowPlayerBase()){
+            game::log << "Can't create a unit without a base" << game::logend;
             return;
         }
 
         switch (unitType) {
 
-            case UnitType::INFANTRY:
-                gameInfo.getNowPlayerBase()->createUnit<SwordMan>(unitPosition);
-                break;
             case UnitType::ARCHER:
-                gameInfo.getNowPlayerBase()->createUnit<CrossBowMan>(unitPosition);
+                gameState.getNowPlayerBase()->createUnit<LongBowMan>(unitPos);
+                break;
+            case UnitType::INFANTRY:
+                gameState.getNowPlayerBase()->createUnit<SwordMan>(unitPos);
                 break;
             case UnitType::DRUID:
-                gameInfo.getNowPlayerBase()->createUnit<Hermit>(unitPosition);
+                gameState.getNowPlayerBase()->createUnit<Hermit>(unitPos);
                 break;
 
         }
-        game::log << "Command create unit" << game::logend;
+        game::log << "Command to create a unit " << game::logend;
 
     }
 
-    CommandMemento * getMemento() const override{
+    [[nodiscard]] CommandSnapshot * getSnapshot() const override{
 
-        std::stringstream ss;
-        ss << "create unit " << unitPosition.x << " " << unitPosition.y << " " << static_cast<int>(unitType) << std::endl;
-        return new CommandMemento(ss.str());
+        std::stringstream stream;
+        stream << "create unit " << unitPos.x << " " << unitPos.y << " " << static_cast<int>(unitType) << std::endl;
+        return new CommandSnapshot(stream.str());
 
     }
 
@@ -56,25 +56,23 @@ class CreateUnitCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
+    bool canHandle(std::vector<std::string> &terminal) override{
 
-        return cmd.size() == 4 && cmd[0] == "unit";
+        return terminal.size() == 4 && terminal[0] == "unit";
 
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override {
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override {
 
-        if (canHandle(cmd)){
-
-            int x = Specs::StrToInt(cmd[1]);
-            int y = Specs::StrToInt(cmd[2]);
-            auto type = static_cast<UnitType>(std::stoi(cmd[3]));
-            Point basePosition(x, y);
-            return CommandPtr(new CreateUnitCommand(basePosition, type));
-
+        if (canHandle(terminal)){
+            int x = convertStr(terminal[1]);
+            int y = convertStr(terminal[2]);
+            auto type = static_cast<UnitType>(std::stoi(terminal[3]));
+            Point basePos(x, y);
+            return std::unique_ptr<Command>(new CreateUnitCommand(basePos, type));
         }
 
-        if (next) return next->handle(cmd);
+        if (next) return next->handle(terminal);
         return std::make_unique<Command>();
 
     }

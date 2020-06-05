@@ -15,7 +15,7 @@ public:
 
     SmallGame(): GameRule( 5, 5), nowState(new FirstPlayer){}
 
-    bool isOver(GameInfo &gameInfo) override {
+    bool isOver(GameState &gameInfo) override {
         int liveCount = gameInfo.getBases().size();
         for (auto b: gameInfo.getBases()){
             if (b && b->getHealth() <= 0){
@@ -26,7 +26,7 @@ public:
         return liveCount <= 1;
     }
 
-    int nextUser(GameInfo &gameInfo) override {
+    int nextUser(GameState &gameInfo) override {
 
         int nowPlayerIndex = gameInfo.getNowPlayerIndex()+nowState->getNextPlayerDelta();
         nowPlayerIndex %= gameInfo.getBases().size();

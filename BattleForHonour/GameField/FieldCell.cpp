@@ -1,74 +1,61 @@
 #include "FieldCell.h"
 
-FieldCell::FieldCell(Landscape *landscape): FieldCell() {
-
-    landscape = landscape;
-
+FieldCell::FieldCell(Terrain *terrain): FieldCell() {
+    this->terrain = terrain;
 }
 
 bool FieldCell::setObject(GameObject *object) {
     if (isEmpty()){
-
         this->object = object;
         return true;
-
-    } else {
+    } else
         return false;
-    }
 }
 
-bool FieldCell::setLandscape(Landscape *landscape) {
-    if (!this->landscape){
-
-        this->landscape = landscape;
+bool FieldCell::setTerrain(Terrain *terrain) {
+    if (!this->terrain){
+        this->terrain = terrain;
         return true;
-
-    } else {
+    } else
         return false;
-    }
 }
 
 void FieldCell::eraseObject() {
-
-    object = nullptr;
-
+    this->object = nullptr;
 }
 
 std::ostream &operator<<(std::ostream &stream, const FieldCell &cell) {
 
     stream << " ";
-    if (cell.landscape){
+
+    if (cell.terrain){
 
         if (cell.object)
-            cell.landscape->print(stream, *cell.object);
+            cell.terrain->print(stream, *cell.object);
         else
-            stream << *cell.landscape;
+            stream << *(cell.terrain);
 
     } else{
 
         if (cell.object)
-            stream << "|" << *cell.object << "|";
+            stream << *(cell.object);
         else
-            stream << "|#|";
+            stream << "#";
 
     }
-
     return stream;
-
 }
 
 FieldCell::FieldCell(FieldCell &&other):
         object(other.object),
-        landscape(other.landscape)
-{
-
+        terrain(other.terrain)
+        {
     other.object = nullptr;
-
 }
 
 FieldCell &FieldCell::operator=(FieldCell &&other) {
-
-    if (&other == this) return *this;
+    if (&other == this)
+        return *this;
 
     object = other.object;
     other.object = nullptr;
@@ -79,14 +66,14 @@ FieldCell &FieldCell::operator=(FieldCell &&other) {
 
 FieldCell::FieldCell(const FieldCell &other):
         object(other.object),
-        landscape(other.landscape){}
+        terrain(other.terrain){}
 
 FieldCell &FieldCell::operator=(const FieldCell &other) {
 
     if (&other == this) return *this;
 
     object = other.object;
-    landscape = other.landscape;
+    terrain = other.terrain;
 
     return *this;
 

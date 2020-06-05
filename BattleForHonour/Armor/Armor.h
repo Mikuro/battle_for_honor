@@ -2,50 +2,80 @@
 #define BATTLEFORHONOUR_ARMOR_H
 
 #include <ostream>
+#include "ArmorType.h"
 
-enum class ArmorType{
-    LIGHT,
-    MEDIUM,
-    HEAVY,
-    MAGIC
-};
 
 class Armor {
 
 protected:
 
     ArmorType type;
-    int damageAbsorption;
+    int absorbation{};
 
 public:
 
     Armor(){}
-    int getDamageAbsorption() const { return damageAbsorption; }
-    ArmorType getType(){ return type; }
 
-    bool operator==(Armor &other){
-
-        return type == other.type && damageAbsorption == other.damageAbsorption;
-
-    }
-
-    Armor& operator=(const Armor& other){
-
-        if (this == &other) return *this;
-        type = other.type;
-        damageAbsorption = other.damageAbsorption;
-        return *this;
-
+    [[nodiscard]] int controlAbsorb() const { return this->absorbation; }
+    ArmorType getArmorType(){
+        return type;
     }
 
     friend std::ostream &operator<<(std::ostream &stream, const Armor &armor){
-
-        stream << "Armor( " << "Damage Absorption: " << armor.damageAbsorption << " )";
+        stream << "Armor = " << "Damage Absorb: " << armor.absorbation << " ;";
         return stream;
+    }
 
+    bool operator==(Armor &other){
+        return this->type == other.type && this->absorbation == other.absorbation;
+    }
+
+    Armor& operator=(const Armor& tmp){
+        if (this == &tmp)
+            return *this;
+        this->type = tmp.type;
+        this->absorbation = tmp.absorbation;
+        return *this;
+    }
+};
+
+
+class LeatherArmor: public Armor {
+
+public:
+    LeatherArmor(){
+        type = ArmorType::LIGHT;
+        absorbation = 2;
+    }
+};
+
+class PlateMail: public Armor{
+
+public:
+    PlateMail(){
+        type = ArmorType::MEDIUM;
+        absorbation = 5;
     }
 
 };
 
+class Robe: public Armor{
 
+public:
+    Robe(){
+        type = ArmorType::MAGIC;
+        absorbation = 1;
+    }
+
+};
+
+class VladimirOffering: public Armor{
+
+public:
+    VladimirOffering(){
+        type = ArmorType::HEAVY;
+        absorbation = 10;
+    }
+
+};
 #endif //BATTLEFORHONOUR_ARMOR_H

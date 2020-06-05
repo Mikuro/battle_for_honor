@@ -5,36 +5,34 @@
 #include <vector>
 #include "Armor.h"
 
-class ArmorFlyWeight {
+class ArmorFlyweight {
 
 private:
 
-    static ArmorFlyWeight *self;
-    std::vector<Armor*> armors;
+    static ArmorFlyweight *self;
+    std::vector<Armor*> armorArr;
 
 public:
-    template <typename T>
-    static T* getFlyWeight(){
+    template <typename Type>
+    static Type* getFlyweight(){
 
         if (!self)
-            self = new ArmorFlyWeight();
+            self = new ArmorFlyweight();
 
-        T needArmor;
-        for (auto *armor: self->armors){
-
-            if (needArmor == *armor){
-                return static_cast<T*>(armor);
+        Type typeArmor;
+        for (auto *armor: self->armorArr){
+            if (typeArmor == *armor){
+                return static_cast<Type*>(armor);
             }
-
         }
 
-        T *armorPtr = new T();
-        self->armors.push_back(armorPtr);
+        Type *armorPtr = new Type();
+        self->armorArr.push_back(armorPtr);
         return armorPtr;
-
     }
-
 };
+
+ArmorFlyweight *ArmorFlyweight::self = nullptr;
 
 
 #endif //BATTLEFORHONOUR_ARMORFLYWEIGHT_H

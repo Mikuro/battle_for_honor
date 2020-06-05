@@ -7,9 +7,7 @@
 class LogFormat {
 
 public:
-
     virtual std::string getFormatted(std::string &notFormatted)=0;
-
 };
 
 #endif //BATTLEFORHONOUR_LOGFORMAT_H

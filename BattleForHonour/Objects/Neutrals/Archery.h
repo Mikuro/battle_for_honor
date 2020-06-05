@@ -19,10 +19,8 @@ protected:
 public:
 
     void applyTo(Unit &unit) override {
-
         CrossBowMan crossbowman;
         unit = crossbowman;
-
     }
 
 };

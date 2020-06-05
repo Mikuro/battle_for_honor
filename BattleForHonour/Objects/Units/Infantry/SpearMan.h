@@ -9,7 +9,9 @@ class SpearMan: public Infantry{
 
 public:
 
-    SpearMan(): Infantry(*WeaponFlyWeight::getFlyWeight<Spear>(), 50){}
+    SpearMan():
+        Infantry(*WeaponFlyWeight::getFlyWeight<Spear>(), 50){}
+
 
 };
 

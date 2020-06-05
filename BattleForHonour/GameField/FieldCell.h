@@ -3,7 +3,7 @@
 
 
 #include <ostream>
-#include "../Landscapes/Landscape.h"
+#include "../Terrains/Terrain.h"
 #include "../Objects/GameObject.h"
 
 class FieldCell {
@@ -11,30 +11,31 @@ class FieldCell {
 private:
 
     GameObject *object;
-    Landscape *landscape;
+    Terrain *terrain;
 
 public:
 
-    FieldCell(): object(nullptr), landscape(nullptr) {}
+    FieldCell():
+        object(nullptr),
+        terrain(nullptr) {}
+
     FieldCell(const FieldCell& other);
     FieldCell(FieldCell &&other);
-    explicit FieldCell(Landscape *landscape);
+    explicit FieldCell(Terrain *terrain);
 
     bool isEmpty() { return object == nullptr; }
     bool setObject(GameObject *object);
-    bool setLandscape(Landscape *landscape);
+    bool setTerrain(Terrain *terrain);
+
     void eraseObject();
 
+    [[nodiscard]] GameObject *getObject() const { return object; }
+    [[nodiscard]] Terrain *getTerrain() const { return terrain; }
+
     friend std::ostream& operator<< (std::ostream &stream, const FieldCell &cell);
-
-    GameObject *getObject() const { return object; }
-    Landscape *getLandscape() const { return landscape; }
-
-    FieldCell& operator=(FieldCell && other);
+    FieldCell& operator=(FieldCell &&other);
     FieldCell& operator=(const FieldCell &other);
 
 };
-
-
 
 #endif //BATTLEFORHONOUR_FIELDCELL_H

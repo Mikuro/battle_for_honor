@@ -3,14 +3,13 @@
 
 
 #include "Archer.h"
-#include "../../../Armor/PlateMail.h"
+#include "../../../Armor/Armor.h"
 
 class LongBowMan: public Archer{
 
 public:
-
-    LongBowMan(): Archer(*ArmorFlyWeight::getFlyWeight<PlateMail>(), 50){}
-
+    LongBowMan():
+        Archer(*ArmorFlyweight::getFlyweight<PlateMail>(), 50){}
 };
 
 

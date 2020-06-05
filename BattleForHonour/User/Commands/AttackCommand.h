@@ -9,24 +9,25 @@ class AttackCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
+    bool canHandle(std::vector<std::string> &terminal) override{
 
-        return cmd.size() > 1 && cmd[0] == "attack";
+        return terminal.size() > 1 && terminal[0] == "attack";
 
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)) {
+        if (canHandle(terminal)) {
 
-            cmd.erase(cmd.begin());
+            terminal.erase(terminal.begin());
 
             auto handle1 = new AttackUnitCommandHandler();
-            return handle1->handle(cmd);
+            return handle1->handle(terminal);
 
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
         return std::make_unique<Command>();
 
     }

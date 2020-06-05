@@ -8,7 +8,7 @@ Unit::Unit(const Unit &other):
 
 void Unit::addObserver(UnitObserver *observer) {
 
-    game::log << "[Unit] observer added" << game::logend;
+    game::log << "[#Unit] observer added" << game::logend;
     observers.push_back(observer);
 
 }
@@ -18,7 +18,7 @@ void Unit::move(Point point) {
     for (auto o: observers){
         o->onUnitMove(this, point);
     }
-    game::log << "[Unit] moving" << game::logend;
+    game::log << "[#Unit] moving" << game::logend;
 
 }
 
@@ -27,7 +27,7 @@ void Unit::attack(Unit &other) {
     for (auto o: observers){
         o->onUnitAttack(this, &other);
     }
-    game::log << "[Unit] attack" << game::logend;
+    game::log << "[#Unit] attacks" << game::logend;
 
 }
 
@@ -47,7 +47,7 @@ void Unit::damage(int damage) {
 
     }
 
-    game::log << "[Unit] damaged by " << damage << " points" << game::logend;
+    game::log << "[#Unit] damaged by " << damage << " points" << game::logend;
 
 }
 
@@ -58,7 +58,7 @@ void Unit::heal(int hp) {
     }
 
     health += hp;
-    game::log << "[Unit] healed by " << hp << " points \n" << game::logend;
+    game::log << "[#Unit] healed by " << hp << " points \n" << game::logend;
 
 }
 
@@ -88,14 +88,13 @@ Unit::Unit(UnitType unitType, Armor &armor, Weapon &weapon, int health):
         health(health)
 {}
 
-int Unit::getHealth() {
+int Unit::getHealth() const {
     return health;
 }
 
 void Unit::print(std::ostream &stream) const {
 
     switch(unitType){
-
         case UnitType::DRUID:
             stream << "D";
             break;
@@ -105,7 +104,6 @@ void Unit::print(std::ostream &stream) const {
         case UnitType::INFANTRY:
             stream << "I";
             break;
-
     }
 
 }

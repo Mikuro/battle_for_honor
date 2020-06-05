@@ -9,10 +9,8 @@ class Bow: public Weapon{
 public:
 
     Bow(){
-
         damage = 10;
-        type = WeaponType::FAR;
-
+        type = WeaponType::DISTANCE;
     }
 
 };

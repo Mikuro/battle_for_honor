@@ -7,11 +7,9 @@
 #include "../Logs/log.h"
 
 enum class ObjectType{
-
     UNIT,
     BASE,
-    NEUTRAL_OBJECT,
-
+    NEUTRAL_OBJECT
 };
 
 class GameObject {
@@ -35,7 +33,7 @@ public:
     friend std::ostream &operator<<(std::ostream &stream, const GameObject &object);
     friend LogProxy& operator<<(LogProxy &logger, GameObject &obj){
 
-        logger << "Object( x: " << obj.position.x << " y: " << obj.position.y << ")";
+        logger << "Object = x: " << obj.position.x << " y: " << obj.position.y;
         return logger;
 
     }

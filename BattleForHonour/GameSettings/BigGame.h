@@ -15,12 +15,11 @@ public:
 
     BigGame(): GameRule( 15, 15), nowState(new FirstPlayer){}
 
-    bool isOver(GameInfo &gameInfo) override {
+    bool isOver(GameState &gameInfo) override {
         return false;
     }
 
-    int nextUser(GameInfo &gameInfo) override {
-
+    int nextUser(GameState &gameInfo) override {
         int nowPlayerIndex = gameInfo.getNowPlayerIndex()+nowState->getNextPlayerDelta();
         nowPlayerIndex %= gameInfo.getBases().size();
         auto nextState = nowState->getNextPlayerState();

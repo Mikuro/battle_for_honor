@@ -11,12 +11,12 @@ class Unit;
 class NeutralObject: public GameObject {
 
 protected:
-
-    NeutralObjectStrategy *strategy;
+    NeutralObjectStrategy *strategy{};
 
 public:
+    NeutralObject():
+        GameObject(ObjectType::NEUTRAL_OBJECT){}
 
-    NeutralObject(): GameObject(ObjectType::NEUTRAL_OBJECT){}
     void setStrategy(NeutralObjectStrategy *strategy) { this->strategy = strategy; }
     virtual void applyTo(Unit &unit)=0;
 

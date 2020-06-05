@@ -23,7 +23,7 @@ class SecondPlayer: public PlayerState {
 
 };
 
-class ThirdPlayer: public PlayerState {
+class SpecPlayer: public PlayerState {
 
     int getNextPlayerDelta() override{
         return -1;
@@ -45,7 +45,7 @@ public:
 
     PlayerState* getNextPlayerState() override{
 
-        return new ThirdPlayer;
+        return new SpecPlayer;
 
     }
 

@@ -3,8 +3,6 @@
 
 
 #include "../ConnectCI.h"
-#include "../../Specs.h"
-
 
 class LoadCommand: public Command {
 
@@ -16,60 +14,58 @@ private:
 public:
 
     explicit LoadCommand(std::string &filename): fs(filename){}
-    void execute(GameInfo &gameInfo) override{
+    void execute(GameState &gameState) override{
 
-        gameInfo.newGame();
+        gameState.newGame();
 
-        std::string cmd;
+        std::string terminal;
 
-        std::hash<std::string> hashFunc;
+        std::hash<std::string> toHash;
         unsigned long int calculatedHash = 0;
         unsigned long int fileHash = 0;
 
         std::string fileHashStr;
         std::getline(fs, fileHashStr);
 
-        fileHash = Specs::StrToInt(fileHashStr);
+        fileHash = convertStr(fileHashStr);
 
-        while (std::getline(fs, cmd)){
+        while (std::getline(fs, terminal)){
 
-            CommandPtr command = interpreter.handle(cmd);
+            std::unique_ptr<Command> command = interpreter.handle(terminal);
             try {
-                command->execute(gameInfo);
+                command->execute(gameState);
             } catch(DoubleBasePlacingExc &exception) {
-                game::log << "[FileLoader]" << "Player " << exception.playerIndex << " trying to place base second time." << game::logend;
+                game::log << "[#FileLoader]" << "User " << exception.playerIndex << " trying to place second base." << game::logend;
             } catch (DoublePlacingExc &exception){
-                game::log << "[FileLoader]" << "This cell is busy by other object." << game::logend;
+                game::log << "[#FileLoader]" << "This cell is busy by other object." << game::logend;
             } catch (OutOfRangeExc &exception){
-                game::log << "[FileLoader]" << "Out of range. Cell " << exception.x << " " << exception.y << " is not exist." << game::logend;
+                game::log << "[#FileLoader]" << "Out of range. Cell " << exception.x << " " << exception.y << " is not exist." << game::logend;
             } catch (ImpossibleMoveExc &exception){
-                game::log << "[FileLoader]" << "Can't move to this cell. They busy by other object." << game::logend;
+                game::log << "[#FileLoader]" << "Can't move to this cell. They busy by other object." << game::logend;
             } catch (...){
-                game::log << "[FileLoader]" << "Undefined error." << game::logend;
+                game::log << "[#FileLoader]" << "Unknown error." << game::logend;
             }
-            auto memento = command->getMemento();
-            gameInfo.addToHistory(memento);
-            calculatedHash += memento->getHash(hashFunc);
-            gameInfo.nextUser();
+            auto snapshot = command->getSnapshot();
+            gameState.addAction(snapshot);
+            calculatedHash += snapshot->getHash(toHash);
+            gameState.nextUser();
 
         }
 
-        game::log << "String hash from file: " << fileHashStr << game::logend;
-        game::log << "Int hash from file: " << fileHash << game::logend;
+        game::log << "String hash: " << fileHashStr << game::logend;
+        game::log << "Integer hash: " << fileHash << game::logend;
         game::log << "Calculated hash: " << calculatedHash << game::logend;
-        game::log << "Read commands count: " << gameInfo.getHistory().size() << game::logend;
+        game::log << "Commands were read: " << gameState.getActions().size() << game::logend;
 
         if (fileHash != calculatedHash){
-            game::log << "Wrong file format. The correctness of the loaded field is not guaranteed." << game::logend;
+            game::log << "Wrong file format. File may be incorrect." << game::logend;
             throw InvalidFileLoadExc();
         }
 
     }
 
     ~LoadCommand() override{
-
         fs.close();
-
     }
 
 };
@@ -78,19 +74,18 @@ class LoadCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-
-        return cmd.size() == 2 && cmd[0] == "load";
-
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() == 2 && terminal[0] == "load";
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
-            return CommandPtr(new LoadCommand(cmd[1]));
+        if (canHandle(terminal)){
+            return std::unique_ptr<Command>(new LoadCommand(terminal[1]));
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
 
         return std::make_unique<Command>();
 

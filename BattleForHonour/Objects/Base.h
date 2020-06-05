@@ -28,13 +28,12 @@ public:
     bool addUnit(Unit *unit, Point position);
     void addObserver(BaseObserver *baseObserver);
 
-    int getHealth(){ return health; }
+    [[nodiscard]] int getHealth() const{ return health; }
     Armor& getArmor(){ return armor; }
-    int getMaxObjectsCount(){ return limit; }
+    [[nodiscard]] int getMaxObjectsCount() const{ return limit; }
 
-    template <typename T>
-    T *createUnit(Point position);
-
+    template <typename Type>
+    Type *createUnit(Point position);
     void onUnitAttack(Unit *unit, Unit *other) override;
     void onUnitMove(Unit *unit, Point p) override;
     void onUnitDestroy(Unit *unit) override;
@@ -59,12 +58,12 @@ T *Base::createUnit(Point position) {
         unit->addObserver(this);
 
         for (auto bo:baseObservers) bo->onBaseNewUnitCreated(unit, position);
-        game::log << "[Base] Unit created\n";
+        game::log << "[#Base] Unit created\n";
 
         return unit;
     } else{
 
-        game::log << "[Base] Cannot create unit. Limit is exceeded.\n";
+        game::log << "[#Base] Cannot create unit. Limit is exceeded.\n";
         return nullptr;
 
     }

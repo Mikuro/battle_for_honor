@@ -11,24 +11,22 @@ class NewCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &cmd) override{
-
-        return cmd.size() > 1 && cmd[0] == "new";
-
+    bool canHandle(std::vector<std::string> &terminal) override{
+        return terminal.size() > 1 && terminal[0] == "new";
     }
 
-    CommandPtr handle(std::vector<std::string> &cmd) override{
+    std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(cmd)){
+        if (canHandle(terminal)){
 
-            cmd.erase(cmd.begin());
+            terminal.erase(terminal.begin());
+            auto handlerTemp = new NewGameCommandHandler;
 
-            auto handler1 = new NewGameCommandHandler;
-
-            return handler1->handle(cmd);
+            return handlerTemp->handle(terminal);
         }
 
-        if (next) return next->handle(cmd);
+        if (next)
+            return next->handle(terminal);
 
         return std::make_unique<Command>();
 

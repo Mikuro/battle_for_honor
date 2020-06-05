@@ -14,7 +14,7 @@ GameField::GameField(int fieldSize):
 {
 
     field = new FieldCell* [fieldSize];
-    for (int i=0; i<fieldSize; i++){
+    for (int i = 0; i < fieldSize; i++){
         field[i] = new FieldCell [fieldSize];
     }
 }
@@ -24,7 +24,7 @@ GameField::GameField(int fieldHeight, int fieldWidth):
         fieldWidth(fieldWidth)
 {
     field = new FieldCell* [fieldHeight];
-    for (int i=0; i<fieldHeight; i++){
+    for (int i = 0; i < fieldHeight; i++){
         field[i] = new FieldCell [fieldWidth];
     }
 }
@@ -41,7 +41,7 @@ void GameField::deleteObject(int x, int y) {
 bool GameField::addObject(GameObject *object, int x, int y) {
 
     if (object->isOnField){
-        game::log << "[GameField] Impossible to add " << *object << " to field" << game::logend;
+        game::log << "[#GameField] Impossible addition of " << *object << " on field" << game::logend;
         throw DoublePlacingExc();
     }
 
@@ -55,7 +55,7 @@ bool GameField::addObject(GameObject *object, int x, int y) {
 
     } else{
 
-        game::log << "[GameField] Impossible to add " << *object << " to field" << game::logend;
+        game::log << "[#GameField] Impossible addition of " << *object << " on field" << game::logend;
         throw OutOfRangeExc(x, y);
 
     }
@@ -64,49 +64,31 @@ bool GameField::addObject(GameObject *object, int x, int y) {
 }
 
 void GameField::deleteObject(GameObject *object) {
-
     deleteObject(object->position.x, object->position.y);
-
 }
 
 void GameField::moveObject(const Point &p1, const Point &p2) {
 
-    if (isInField(p1) && isInField(p2) && !field[p1.y][p1.x].isEmpty() && field[p2.y][p2.x].isEmpty()){
+    if (checkBorder(p1) && checkBorder(p2) && !field[p1.y][p1.x].isEmpty() && field[p2.y][p2.x].isEmpty()){
 
         field[p2.y][p2.x] = std::move(field[p1.y][p1.x]);
         field[p2.y][p2.x].getObject()->position = p2;
-
         field[p1.y][p1.x].eraseObject();
 
     } else{
 
-        game::log << "[GameField] Impossible to move object from " << p1.x << " " << p1.y << " to " << p2.x << " " << p2.y << game::logend;
+        game::log << "[#GameField] Impossible to move object from " << p1.x << " " << p1.y << " to " << p2.x << " " << p2.y << game::logend;
         throw ImpossibleMoveExc();
 
     }
 
 }
 
-void GameField::moveObject(GameObject *object, const Point &p2) {
-
-    Point p1 = object->getPosition();
-    moveObject(p1, p2);
-
-}
 
 void GameField::deleteObject(const Point &point) {
-
     deleteObject(point.x, point.y);
-
 }
 
-int GameField::getHeight() const{
-    return fieldHeight;
-}
-
-int GameField::getWidth() const{
-    return fieldWidth;
-}
 
 FieldCell *GameField::getCell(const Point &p) const{
 
@@ -137,22 +119,17 @@ void GameField::reset() {
     for (int i=0; i<fieldHeight; i++){
         field[i] = new FieldCell [fieldWidth];
     }
-
-
-
 }
 
 std::ostream &operator<<(std::ostream &stream, const GameField &field) {
 
-    for (int y=0; y<field.fieldHeight; y++){
-        for (int x=0; x<field.fieldWidth; x++){
+    for (int y = 0; y < field.fieldHeight; y++){
+        for (int x = 0; x < field.fieldWidth; x++){
             stream << field.field[y][x];
         }
         stream << std::endl;
     }
-
     return stream;
-
 }
 
 void GameField::onUnitMove(Unit *unit, Point p) {
@@ -161,7 +138,7 @@ void GameField::onUnitMove(Unit *unit, Point p) {
 
     if (!cell->isEmpty() && cell->getObject()->getType() == ObjectType::NEUTRAL_OBJECT){
 
-        NeutralObject *neutralObject = static_cast<NeutralObject*>(cell->getObject());
+        auto *neutralObject = dynamic_cast<NeutralObject*>(cell->getObject());
 
         switch (unit->getUnitType()){
             case UnitType::INFANTRY:
@@ -174,25 +151,19 @@ void GameField::onUnitMove(Unit *unit, Point p) {
                 neutralObject->setStrategy(new DruidStrategy());
                 break;
         }
-
         (*unit) << neutralObject;
         cell->eraseObject();
     }
-
     moveObject(unit->getPosition(), p);
 
 }
 
 void GameField::onUnitDestroy(Unit *unit) {
-
     deleteObject(unit->getPosition());
-
 }
 
 bool GameField::addObject(GameObject *object, Point position) {
-
     return addObject(object, position.x, position.y);
-
 }
 
 void GameField::onBaseNewUnitCreated(Unit *unit, Point position) {
@@ -218,17 +189,22 @@ bool GameField::addBase(Base *base, int x, int y) {
 
 }
 
-void GameField::onUnitAttack(Unit *unit, Unit *other) {
+void GameField::onUnitAttack(Unit *unit, Unit *enemy) {
 
-    Landscape *landscape = getCell(unit->getPosition())->getLandscape();
-    LandscapeProxy landscapeProxy(landscape);
-    int resDamage = unit->getWeapon().getDamage()*landscapeProxy.getDamageFactor(unit->getWeapon().getType())
-                    -other->getArmor().getDamageAbsorption()*landscapeProxy.getAbsorptionFactor(other->getArmor().getType());
-    if (resDamage < 0) resDamage = 0;
-    other->damage(resDamage);
+    Terrain *terrain = getCell(unit->getPosition())->getTerrain();
+    TerrainProxy terrainProxy(terrain);
 
+    int damage = unit->getWeapon().getDamage() + terrainProxy.getDamageMultiply(unit->getWeapon().getType());
+    int def = enemy->getArmor().controlAbsorb() + terrainProxy.getAbsorbMultiply(enemy->getArmor().getArmorType());
+
+    int resDamage = damage - def;
+
+    if (resDamage < 0)
+        resDamage = 0;
+
+    enemy->damage(resDamage);
 }
 
-bool GameField::isInField(const Point &p) const {
-    return p.x >=0 && p.x < fieldWidth && p.y >=0 && p.y < fieldHeight;
+bool GameField::checkBorder(const Point &p) const {
+    return p.x >= 0 && p.y >= 0 && p.x < fieldWidth && p.y < fieldHeight;
 }

@@ -9,7 +9,8 @@ class SwordMan: public Infantry{
 
 public:
 
-    SwordMan(): Infantry(*WeaponFlyWeight::getFlyWeight<Sword>(), 100){}
+    SwordMan():
+        Infantry(*WeaponFlyWeight::getFlyWeight<Sword>(), 100){}
 
 };
 
