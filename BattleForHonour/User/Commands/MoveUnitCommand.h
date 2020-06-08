@@ -22,9 +22,9 @@ public:
         if (object && object->getType() == ObjectType::UNIT){
             auto unit1 = dynamic_cast<Unit *>(object);
             unit1->move(to);
-            game::log << "Command to unit moved" << game::logend;
+            Log::log << "Command to unit moved" << Log::logend;
         } else
-            game::log << "No unit on this cell" << game::logend;
+            Log::log << "No unit on this cell" << Log::logend;
     }
 
     [[nodiscard]] CommandSnapshot * getSnapshot() const override{
@@ -41,7 +41,7 @@ class MoveUnitCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
 
         return terminal.size() == 5 && terminal[0] == "unit";
 
@@ -49,7 +49,7 @@ public:
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
 
             int x1 = convertStr(terminal[1]);
             int y1 = convertStr(terminal[2]);
@@ -62,6 +62,7 @@ public:
 
         if (next)
             return next->handle(terminal);
+
         return std::make_unique<Command>();
 
     }

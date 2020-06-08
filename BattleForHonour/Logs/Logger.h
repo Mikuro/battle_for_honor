@@ -2,17 +2,14 @@
 #define BATTLEFORHONOUR_LOGGER_H
 
 #include <string>
-#include "Logend.h"
+#include "LogEnd.h"
 
 class Logger {
 
 public:
-
-    virtual void log(std::string &fs)=0;
-    virtual void log(game::Logend &l){}
+    virtual void log(std::string &str)=0;
+    virtual void log(Log::LogEnd &l){}
     virtual ~Logger(){}
-
 };
-
 
 #endif //BATTLEFORHONOUR_LOGGER_H

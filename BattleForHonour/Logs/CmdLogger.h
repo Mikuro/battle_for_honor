@@ -10,11 +10,8 @@ class CmdLogger: public Logger {
 public:
 
     void log(std::string &stream) override{
-
         std::cout << stream;
-
     }
-
 
 };
 

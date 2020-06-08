@@ -1,19 +1,20 @@
 #include <iostream>
-#include "GameFacade.h"
+#include "Game/GameFacade.h"
 #include "Logs/FileLogger.h"
 #include "Logs/CmdLogger.h"
 #include "GameSettings/BigGame.h"
-#include "GameSettings/SmallGame.h"
 #include "GameSettings/MidGame.h"
+#include "GameSettings/SmallGame.h"
+#include "GameSettings/HillKing.h"
 
 int main() {
 
-    game::log.setLogger(new CmdLogger());
-    game::log.setLogFormat(new NoFormat());
+    Log::log.setLogFormat(new CmdLogger());
+    Log::log.setLogStrOutput(new LogString());
 
-    auto game = GameFacade<MidGame, 2>::single();
+    auto game = GameFacade<SmallGame, 2>::single();
 
-    while (game.isOver() == false){
+    while (!game.isOver()){
         std::cout << game;
         game.nextTurn();
     }

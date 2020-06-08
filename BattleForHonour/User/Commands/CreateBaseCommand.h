@@ -14,15 +14,15 @@ private:
 
 public:
 
-    explicit CreateBaseCommand(Point position): basePos(position){}
+    explicit CreateBaseCommand(Point pos): basePos(pos){}
     void execute(GameState &gameState) override{
 
         auto *base = new Base(100, *ArmorFlyweight::getFlyweight<LeatherArmor>());
         if (gameState.setNowPlayerBase(base)) {
             gameState.getField().addBase(base, basePos);
-            game::log << "Command to create base" << game::logend;
+            Log::log << "Command to create base" << Log::logend;
         } else
-            game::log << "This player already has base" << game::logend;
+            Log::log << "This player already has base" << Log::logend;
     }
 
     [[nodiscard]] CommandSnapshot * getSnapshot() const override{
@@ -39,7 +39,7 @@ class CreateBaseCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
 
         return terminal.size() == 3 && terminal[0] == "base";
 
@@ -47,7 +47,7 @@ public:
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override {
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             int x = convertStr(terminal[1]);
             int y = convertStr(terminal[2]);
             Point basePosition(x, y);

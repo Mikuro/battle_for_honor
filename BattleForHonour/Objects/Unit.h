@@ -7,11 +7,11 @@
 #include "../Armor/Armor.h"
 #include "../Weapon/Weapon.h"
 #include "../Observers/Observers.h"
-#include "../Point.h"
+#include "../GameField/Point.h"
 #include "GameObject.h"
 #include "../Terrains/TerrainProxy.h"
 #include "Neutrals/NeutralObject.h"
-#include "../Logs/log.h"
+#include "../Logs/Log.h"
 #include "UnitType.h"
 
 
@@ -20,9 +20,8 @@ class Unit: public GameObject {
 
 protected:
 
-    int health;
     UnitType unitType;
-
+    int health;
     Armor &armor;
     Weapon &weapon;
     std::vector<UnitObserver*> observers;
@@ -32,7 +31,6 @@ protected:
 public:
 
     Unit(const Unit &other);
-
     Unit(UnitType unitType, Armor &armor, Weapon &weapon, int health);
 
     Weapon &getWeapon(){
@@ -48,17 +46,19 @@ public:
     void damage(int damage);
 
     void addObserver(UnitObserver *observer);
-    Unit& operator=(const Unit &other);
+    Unit& operator=(const Unit &unit);
     Unit& operator<<(NeutralObject *neutralObject);
 
     friend LogProxy& operator<<(LogProxy &logger, Unit &unit){
 
-        logger << "Unit = x: " << unit.position.x << " y: " << unit.position.y << " health: " << unit.health;
+        logger << "Unit = x: " << unit.pos.x << " y: " << unit.pos.y << " health: " << unit.health;
         return logger;
 
     }
 
-    UnitType getUnitType(){ return unitType; }
+    UnitType getUnitType(){
+        return unitType;
+    }
 
     int getHealth() const;
 

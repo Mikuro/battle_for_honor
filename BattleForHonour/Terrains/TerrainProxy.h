@@ -3,21 +3,16 @@
 
 
 #include "Terrain.h"
-#include "../Point.h"
+#include "../GameField/Point.h"
 
 class TerrainProxy {
 
 private:
-
     Terrain *terrain;
-
 public:
-
     explicit TerrainProxy(Terrain *terrain);
-
     int getDamageMultiply(WeaponType type);
     int getAbsorbMultiply(ArmorType type);
-
 };
 
 

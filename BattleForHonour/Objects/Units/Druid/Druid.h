@@ -4,8 +4,8 @@
 
 #include "../../Unit.h"
 #include "../../../Armor/Armor.h"
-#include "../../../Weapon/AbolishMagic.h"
-#include "../../../Weapon/WeaponFlyWeight.h"
+#include "../../../Weapon/Weapon.h"
+#include "../../../Weapon/WeaponFlyweight.h"
 #include "../../../Armor/ArmorFlyweight.h"
 
 class Druid: public Unit{

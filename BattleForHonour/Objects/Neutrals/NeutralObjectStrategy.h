@@ -5,7 +5,7 @@
 class NeutralObjectStrategy {
 
 public:
-    virtual int getUnitTypeFactor()=0;
+    virtual int getUnitTypeMultiply()=0;
 };
 
 #endif //BATTLEFORHONOUR_NEUTRALOBJECTSTRATEGY_H

@@ -3,13 +3,13 @@
 
 
 #include "Druid.h"
-#include "../../../Weapon/StarFall.h"
+#include "../../../Weapon/Weapon.h"
 
 class Priestess: public Druid{
 
 public:
     Priestess():
-        Druid(*WeaponFlyWeight::getFlyWeight<StarFall>(), 20){}
+        Druid(*WeaponFlyweight::getFlyWeight<StarFall>(), 20){}
 };
 
 #endif //BATTLEFORHONOUR_PRIESTESS_H

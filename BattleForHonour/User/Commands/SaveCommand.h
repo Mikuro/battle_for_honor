@@ -14,8 +14,8 @@ public:
 
     explicit SaveCommand(std::string &filename){
         fs = std::ofstream(filename);
-        game::log << "File opened" << game::logend;
-        game::log << "File is opened: " << fs.is_open() << game::logend;
+        Log::log << "File opened" << Log::logend;
+        Log::log << "File is opened: " << fs.is_open() << Log::logend;
 
     }
     void execute(GameState &gameState) override{
@@ -23,7 +23,7 @@ public:
         std::hash<std::string> toHash;
         unsigned long int fileHash = 0;
 
-        game::log << "Saving..." << game::logend;
+        Log::log << "Saving..." << Log::logend;
 
         auto actions = gameState.getActions();
 
@@ -37,28 +37,28 @@ public:
             elem->saveToFile(fs);
         }
 
-        game::log << "Saved commands count: " << gameState.getActions().size() << game::logend;
+        Log::log << "Saved commands count: " << gameState.getActions().size() << Log::logend;
 
     }
 
     ~SaveCommand() override{
-        game::log << "File closed" << game::logend;
+        Log::log << "File closed" << Log::logend;
         fs.close();
-        game::log << "File is opened: " << fs.is_open() << game::logend;
+        Log::log << "File is opened: " << fs.is_open() << Log::logend;
     }
 
 };
 
 class SaveCommandHandler: public CommandHandler{
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
         return terminal.size() == 2 && terminal[0] == "save";
 
     }
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             return std::unique_ptr<Command>(new SaveCommand(terminal[1]));
         }
 

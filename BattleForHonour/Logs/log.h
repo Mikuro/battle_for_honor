@@ -3,12 +3,12 @@
 
 
 #include "LogProxy.h"
-#include "Logend.h"
+#include "LogEnd.h"
 
-namespace game{
+namespace Log{
 
     extern LogProxy log;
-    const Logend logend;
+    const LogEnd logend;
 
 }
 

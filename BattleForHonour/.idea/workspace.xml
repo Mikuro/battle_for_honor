@@ -60,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\CLionProjects\BattleForHonour\GameField" />
+      <recent name="C:\Users\anton\CLionProjects\BattleForHonour\Game" />
       <recent name="C:\Users\anton\CLionProjects\BattleForHonour" />
       <recent name="C:\Users\anton\CLionProjects\BattleForHonour\Objects" />
       <recent name="C:\Users\anton\CLionProjects\BattleForHonour\Objects\Neutrals" />
-      <recent name="C:\Users\anton\CLionProjects\BattleForHonour\Logs" />
-      <recent name="C:\Users\anton\CLionProjects\BattleForHonour\UI\Commands" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,7 +103,9 @@
       <workItem from="1591231746602" duration="8477000" />
       <workItem from="1591245200465" duration="598000" />
       <workItem from="1591306185010" duration="7687000" />
-      <workItem from="1591317193227" duration="5939000" />
+      <workItem from="1591317193227" duration="26424000" />
+      <workItem from="1591545797548" duration="10000" />
+      <workItem from="1591546027441" duration="19000" />
     </task>
     <servers />
   </component>
@@ -115,10 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589805381101" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591323611672">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591330703924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591323611672" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591330703924" />
     <state x="718" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589882857316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -127,22 +129,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589805581983" />
-    <state width="1877" height="175" key="GridCell.Tab.0.bottom" timestamp="1591326566182">
+    <state width="1877" height="303" key="GridCell.Tab.0.bottom" timestamp="1591355432464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
-    <state width="1877" height="175" key="GridCell.Tab.0.center" timestamp="1591326566182">
+    <state width="1877" height="303" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591355432464" />
+    <state width="1877" height="303" key="GridCell.Tab.0.center" timestamp="1591355432464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="175" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
-    <state width="1877" height="175" key="GridCell.Tab.0.left" timestamp="1591326566182">
+    <state width="1877" height="303" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591355432464" />
+    <state width="1877" height="303" key="GridCell.Tab.0.left" timestamp="1591355432463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="175" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
-    <state width="1877" height="175" key="GridCell.Tab.0.right" timestamp="1591326566182">
+    <state width="1877" height="303" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591355432463" />
+    <state width="1877" height="303" key="GridCell.Tab.0.right" timestamp="1591355432464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="175" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591326566182" />
+    <state width="1877" height="303" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591355432464" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1590438003591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -159,5 +161,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591322278811" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591339277080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591339277080" />
   </component>
 </project>

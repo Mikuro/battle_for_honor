@@ -11,19 +11,17 @@ class Tent: public NeutralObject {
 protected:
 
     void print(std::ostream &stream) const override{
-
         stream << "TT";
-
     }
 
 public:
 
-    void applyTo(Unit &unit) override {
-
-        unit.heal(50*strategy->getUnitTypeFactor());
-        Priestess priestess;
-        unit = priestess;
-
+    void toEffect(Unit &unit) override {
+        unit.heal(50* strategy->getUnitTypeMultiply());
+        if(unit.getUnitType() == UnitType::DRUID) {
+            Priestess priestess;
+            unit = priestess;
+        }
     }
 
 };

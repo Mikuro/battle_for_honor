@@ -2,14 +2,13 @@
 #define BATTLEFORHONOUR_GAMEFIELD_H
 
 
-#include "../Point.h"
+#include "Point.h"
 #include "GameFieldIterator.h"
 #include "FieldCell.h"
 #include "../Objects/Neutrals/InfantryStrategy.h"
 #include "../Objects/Neutrals/ArcherStrategy.h"
 #include "../Objects/Neutrals/DruidStrategy.h"
 #include "../Objects/Base.h"
-
 #include <iostream>
 
 class GameField: public UnitObserver, public BaseObserver {
@@ -24,7 +23,6 @@ private:
 public:
 
     GameField();
-    explicit GameField(int fieldSize);
     GameField(int fieldHeight, int fieldWidth);
     ~GameField();
     void reset();
@@ -37,9 +35,10 @@ public:
     bool addObject(GameObject *object, Point p);
 
     void moveObject(const Point &p1, const Point &p2);
-
+    void setBorders();
 
     [[nodiscard]] FieldCell *getCell(const Point &p) const;
+    FieldCell *getCell(const int x, const int y);
 
     friend std::ostream& operator<< (std::ostream &stream, const GameField &field);
 
@@ -52,8 +51,8 @@ public:
     void onUnitDamaged(Unit *unit) override {}
     void onUnitHeal(Unit *unit) override {}
 
-    void onBaseNewUnitCreated(Unit *unit, Point position) override;
-    bool addBase(Base *base, Point position);
+    void onBaseNewUnit(Unit *unit, Point pos) override;
+    bool addBase(Base *base, Point pos);
     bool addBase(Base *base, int x, int y);
 
     [[nodiscard]] bool checkBorder(const Point &p) const;

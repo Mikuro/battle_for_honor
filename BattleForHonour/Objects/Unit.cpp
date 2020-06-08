@@ -8,75 +8,65 @@ Unit::Unit(const Unit &other):
 
 void Unit::addObserver(UnitObserver *observer) {
 
-    game::log << "[#Unit] observer added" << game::logend;
+    Log::log << "[#Unit] observer added" << Log::logend;
     observers.push_back(observer);
 
 }
 
 void Unit::move(Point point) {
 
-    for (auto o: observers){
-        o->onUnitMove(this, point);
+    for (auto elem: observers){
+        elem->onUnitMove(this, point);
     }
-    game::log << "[#Unit] moving" << game::logend;
+    Log::log << "[#Unit] moves" << Log::logend;
 
 }
 
 void Unit::attack(Unit &other) {
 
-    for (auto o: observers){
-        o->onUnitAttack(this, &other);
+    for (auto elem: observers){
+        elem->onUnitAttack(this, &other);
     }
-    game::log << "[#Unit] attacks" << game::logend;
+    Log::log << "[#Unit] attacks" << Log::logend;
 
 }
 
 void Unit::damage(int damage) {
 
-    for (auto o: observers) {
-        o->onUnitDamaged(this);
+    for (auto elem: observers) {
+        elem->onUnitDamaged(this);
     }
 
-    if (damage < 0) damage = 0;
+    if (damage < 0)
+        damage = 0;
     health -= damage;
+
     if (health <= 0){
-
-        for (auto o: observers) {
-            o->onUnitDestroy(this);
+        for (auto elem: observers) {
+            elem->onUnitDestroy(this);
         }
-
     }
-
-    game::log << "[#Unit] damaged by " << damage << " points" << game::logend;
-
+    Log::log << "[#Unit] damaged by " << damage << " points" << Log::logend;
 }
 
 void Unit::heal(int hp) {
-
-    for (auto o: observers) {
-        o->onUnitHeal(this);
+    for (auto elem: observers) {
+        elem->onUnitHeal(this);
     }
-
     health += hp;
-    game::log << "[#Unit] healed by " << hp << " points \n" << game::logend;
-
+    Log::log << "[#Unit] healed by " << hp << " points \n" << Log::logend;
 }
 
-Unit &Unit::operator=(const Unit &other) {
+Unit &Unit::operator=(const Unit &unit) {
 
-    if (&other == this)
-        return *this;
-
-    armor = other.armor;
-    weapon = other.weapon;
-    health = other.health;
-
+    armor = unit.armor;
+    weapon = unit.weapon;
+    health = unit.health;
     return *this;
-
 }
 
 Unit &Unit::operator<<(NeutralObject *neutralObject) {
-    neutralObject->applyTo(*this);
+    neutralObject->toEffect(*this);
     return *this;
 }
 
@@ -93,7 +83,6 @@ int Unit::getHealth() const {
 }
 
 void Unit::print(std::ostream &stream) const {
-
     switch(unitType){
         case UnitType::DRUID:
             stream << "D";
@@ -105,5 +94,4 @@ void Unit::print(std::ostream &stream) const {
             stream << "I";
             break;
     }
-
 }

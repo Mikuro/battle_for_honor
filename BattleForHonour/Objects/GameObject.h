@@ -3,14 +3,10 @@
 
 
 #include <ostream>
-#include "../Point.h"
-#include "../Logs/log.h"
+#include "../GameField/Point.h"
+#include "../Logs/Log.h"
+#include "ObjectType.h"
 
-enum class ObjectType{
-    UNIT,
-    BASE,
-    NEUTRAL_OBJECT
-};
 
 class GameObject {
 
@@ -19,7 +15,7 @@ class GameObject {
 protected:
 
     ObjectType type;
-    Point position;
+    Point pos;
     bool isOnField = false;
 
     virtual void print(std::ostream &stream) const = 0;
@@ -27,13 +23,17 @@ protected:
 public:
 
     explicit GameObject(ObjectType type): type(type){}
-    Point getPosition() { return position; }
-    ObjectType getType() { return type; }
+    Point getPosition() {
+        return pos;
+    }
+    ObjectType getType() {
+        return type;
+    }
 
     friend std::ostream &operator<<(std::ostream &stream, const GameObject &object);
-    friend LogProxy& operator<<(LogProxy &logger, GameObject &obj){
+    friend LogProxy& operator<<(LogProxy &logger, GameObject &object){
 
-        logger << "Object = x: " << obj.position.x << " y: " << obj.position.y;
+        logger << "Object = x: " << object.pos.x << " y: " << object.pos.y;
         return logger;
 
     }

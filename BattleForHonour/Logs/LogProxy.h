@@ -2,7 +2,7 @@
 #define BATTLEFORHONOUR_LOGPROXY_H
 
 #include "NoLogger.h"
-#include "NoFormat.h"
+#include "LogString.h"
 #include <string>
 #include <iostream>
 
@@ -11,13 +11,13 @@ class LogProxy {
 private:
 
     Logger *logger;
-    LogFormat *logFormat;
+    LogString *logString;
     bool firstLine = true;
 
     void log(std::string s){
         if (firstLine) {
-            std::string formatted = logFormat->getFormatted(s);
-            logger->log(formatted);
+            std::string toLog = logString->getString(s);
+            logger->log(toLog);
             firstLine = false;
         } else{
             logger->log(s);
@@ -27,12 +27,11 @@ private:
 public:
 
     LogProxy():
-    logger(new NoLogger()),
-    logFormat(new NoFormat()){}
+            logger(new NoLogger()){}
 
     ~LogProxy(){
         delete logger;
-        delete logFormat;
+        delete logString;
     }
 
     friend LogProxy& operator<< (LogProxy &logger, const std::string &s){
@@ -45,23 +44,21 @@ public:
         return logger;
     }
 
-    friend LogProxy& operator<< (LogProxy &logger, const game::Logend &l){
+    friend LogProxy& operator<< (LogProxy &logger, const Log::LogEnd &l){
         logger.log("\n");
         logger.firstLine = true;
         return logger;
     }
 
-    void setLogger(Logger *tmp){
+    void setLogFormat(Logger *tmp){
 
         delete logger;
         logger = tmp;
     }
 
-    void setLogFormat(LogFormat *tmp){
-
-        delete logFormat;
-        logFormat = tmp;
-
+    void setLogStrOutput(LogString *tmp){
+        delete logString;
+        logString = tmp;
     }
 
 };

@@ -176,32 +176,32 @@ GameField/GameField.cpp.s:
 	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/GameField/GameField.cpp.s
 .PHONY : GameField/GameField.cpp.s
 
-Logs/log.obj: Logs/log.cpp.obj
+Logs/Log.obj: Logs/Log.cpp.obj
 
-.PHONY : Logs/log.obj
+.PHONY : Logs/Log.obj
 
 # target to build an object file
-Logs/log.cpp.obj:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Logs/log.cpp.obj
-.PHONY : Logs/log.cpp.obj
+Logs/Log.cpp.obj:
+	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.obj
+.PHONY : Logs/Log.cpp.obj
 
-Logs/log.i: Logs/log.cpp.i
+Logs/Log.i: Logs/Log.cpp.i
 
-.PHONY : Logs/log.i
+.PHONY : Logs/Log.i
 
 # target to preprocess a source file
-Logs/log.cpp.i:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Logs/log.cpp.i
-.PHONY : Logs/log.cpp.i
+Logs/Log.cpp.i:
+	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.i
+.PHONY : Logs/Log.cpp.i
 
-Logs/log.s: Logs/log.cpp.s
+Logs/Log.s: Logs/Log.cpp.s
 
-.PHONY : Logs/log.s
+.PHONY : Logs/Log.s
 
 # target to generate assembly for a file
-Logs/log.cpp.s:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Logs/log.cpp.s
-.PHONY : Logs/log.cpp.s
+Logs/Log.cpp.s:
+	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.s
+.PHONY : Logs/Log.cpp.s
 
 Objects/Base.obj: Objects/Base.cpp.obj
 
@@ -284,33 +284,6 @@ Objects/Unit.cpp.s:
 	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Objects/Unit.cpp.s
 .PHONY : Objects/Unit.cpp.s
 
-Point.obj: Point.cpp.obj
-
-.PHONY : Point.obj
-
-# target to build an object file
-Point.cpp.obj:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Point.cpp.obj
-.PHONY : Point.cpp.obj
-
-Point.i: Point.cpp.i
-
-.PHONY : Point.i
-
-# target to preprocess a source file
-Point.cpp.i:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Point.cpp.i
-.PHONY : Point.cpp.i
-
-Point.s: Point.cpp.s
-
-.PHONY : Point.s
-
-# target to generate assembly for a file
-Point.cpp.s:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Point.cpp.s
-.PHONY : Point.cpp.s
-
 Terrains/TerrainProxy.obj: Terrains/TerrainProxy.cpp.obj
 
 .PHONY : Terrains/TerrainProxy.obj
@@ -337,33 +310,6 @@ Terrains/TerrainProxy.s: Terrains/TerrainProxy.cpp.s
 Terrains/TerrainProxy.cpp.s:
 	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.s
 .PHONY : Terrains/TerrainProxy.cpp.s
-
-Weapon/WeaponFlyWeight.obj: Weapon/WeaponFlyWeight.cpp.obj
-
-.PHONY : Weapon/WeaponFlyWeight.obj
-
-# target to build an object file
-Weapon/WeaponFlyWeight.cpp.obj:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.obj
-.PHONY : Weapon/WeaponFlyWeight.cpp.obj
-
-Weapon/WeaponFlyWeight.i: Weapon/WeaponFlyWeight.cpp.i
-
-.PHONY : Weapon/WeaponFlyWeight.i
-
-# target to preprocess a source file
-Weapon/WeaponFlyWeight.cpp.i:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.i
-.PHONY : Weapon/WeaponFlyWeight.cpp.i
-
-Weapon/WeaponFlyWeight.s: Weapon/WeaponFlyWeight.cpp.s
-
-.PHONY : Weapon/WeaponFlyWeight.s
-
-# target to generate assembly for a file
-Weapon/WeaponFlyWeight.cpp.s:
-	$(MAKE) -f CMakeFiles\BattleForHonour.dir\build.make CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.s
-.PHONY : Weapon/WeaponFlyWeight.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -407,9 +353,9 @@ help:
 	@echo ... GameField/GameField.obj
 	@echo ... GameField/GameField.i
 	@echo ... GameField/GameField.s
-	@echo ... Logs/log.obj
-	@echo ... Logs/log.i
-	@echo ... Logs/log.s
+	@echo ... Logs/Log.obj
+	@echo ... Logs/Log.i
+	@echo ... Logs/Log.s
 	@echo ... Objects/Base.obj
 	@echo ... Objects/Base.i
 	@echo ... Objects/Base.s
@@ -419,15 +365,9 @@ help:
 	@echo ... Objects/Unit.obj
 	@echo ... Objects/Unit.i
 	@echo ... Objects/Unit.s
-	@echo ... Point.obj
-	@echo ... Point.i
-	@echo ... Point.s
 	@echo ... Terrains/TerrainProxy.obj
 	@echo ... Terrains/TerrainProxy.i
 	@echo ... Terrains/TerrainProxy.s
-	@echo ... Weapon/WeaponFlyWeight.obj
-	@echo ... Weapon/WeaponFlyWeight.i
-	@echo ... Weapon/WeaponFlyWeight.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -23,7 +23,7 @@ public:
         fileStream << fs;
     }
 
-    void log(game::Logend &l) override{
+    void log(Log::LogEnd &l) override{
         fileStream.flush();
     }
 

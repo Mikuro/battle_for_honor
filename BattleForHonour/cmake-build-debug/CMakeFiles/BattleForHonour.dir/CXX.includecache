@@ -24,13 +24,23 @@ C:/Users/anton/CLionProjects/BattleForHonour/Exceptions/StackExceptions.h
 exception
 -
 
-C:/Users/anton/CLionProjects/BattleForHonour/GameFacade.h
+C:/Users/anton/CLionProjects/BattleForHonour/Game/GameFacade.h
 sstream
 -
 GameState.h
-C:/Users/anton/CLionProjects/BattleForHonour/GameState.h
-User/CommandInterpreter.h
+C:/Users/anton/CLionProjects/BattleForHonour/Game/GameState.h
+../User/CommandInterpreter.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/CommandInterpreter.h
+
+C:/Users/anton/CLionProjects/BattleForHonour/Game/GameState.h
+../User/Commands/CommandSnapshot.h
+C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CommandSnapshot.h
+../GameField/GameField.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.h
+../Exceptions/StackExceptions.h
+C:/Users/anton/CLionProjects/BattleForHonour/Exceptions/StackExceptions.h
+../GameSettings/GameRule.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/GameField/FieldCell.h
 ostream
@@ -40,15 +50,9 @@ C:/Users/anton/CLionProjects/BattleForHonour/Terrains/Terrain.h
 ../Objects/GameObject.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/GameObject.h
 
-C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.cpp
-GameField.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.h
-../Exceptions/StackExceptions.h
-C:/Users/anton/CLionProjects/BattleForHonour/Exceptions/StackExceptions.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.h
-../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
+Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 GameFieldIterator.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameFieldIterator.h
 FieldCell.h
@@ -67,10 +71,12 @@ iostream
 C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameFieldIterator.h
 iterator
 -
-../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
+Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 FieldCell.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameField/FieldCell.h
+
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/BigGame.h
 GameRule.h
@@ -79,6 +85,14 @@ PlayerState.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/PlayerState.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h
+
+C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/HillKing.h
+PlayerState.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/PlayerState.h
+GameRule.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h
+../Game/GameState.h
+C:/Users/anton/CLionProjects/BattleForHonour/Game/GameState.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/MidGame.h
 GameRule.h
@@ -94,16 +108,6 @@ C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h
 PlayerState.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/PlayerState.h
 
-C:/Users/anton/CLionProjects/BattleForHonour/GameState.h
-User/Commands/CommandSnapshot.h
-C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CommandSnapshot.h
-GameField/GameField.h
-C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameField.h
-Exceptions/StackExceptions.h
-C:/Users/anton/CLionProjects/BattleForHonour/Exceptions/StackExceptions.h
-GameSettings/GameRule.h
-C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h
-
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/CmdLogger.h
 iostream
 -
@@ -116,41 +120,37 @@ fstream
 Logger.h
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logger.h
 
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogFormat.h
-string
--
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/Log.h
+LogProxy.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogProxy.h
+LogEnd.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogEnd.h
+
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogEnd.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogProxy.h
 NoLogger.h
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoLogger.h
-NoFormat.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoFormat.h
+LogString.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogString.h
 string
 -
 iostream
 -
 
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logend.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogString.h
+string
+-
 
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logger.h
 string
 -
-Logend.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logend.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoFormat.h
-LogFormat.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogFormat.h
+LogEnd.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogEnd.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoLogger.h
 Logger.h
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logger.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.h
-LogProxy.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogProxy.h
-Logend.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logend.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Base.h
 ../Armor/Armor.h
@@ -171,10 +171,12 @@ algorithm
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/GameObject.h
 ostream
 -
-../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
-../Logs/log.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.h
+../GameField/Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
+../Logs/Log.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/Log.h
+ObjectType.h
+C:/Users/anton/CLionProjects/BattleForHonour/Objects/ObjectType.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/ArcherStrategy.h
 NeutralObjectStrategy.h
@@ -198,6 +200,8 @@ C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/NeutralObjectStrategy.h
 
+C:/Users/anton/CLionProjects/BattleForHonour/Objects/ObjectType.h
+
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h
 vector
 -
@@ -209,28 +213,28 @@ C:/Users/anton/CLionProjects/BattleForHonour/Armor/Armor.h
 C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
 ../Observers/Observers.h
 C:/Users/anton/CLionProjects/BattleForHonour/Observers/Observers.h
-../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
+../GameField/Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 GameObject.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/GameObject.h
 ../Terrains/TerrainProxy.h
 C:/Users/anton/CLionProjects/BattleForHonour/Terrains/TerrainProxy.h
 Neutrals/NeutralObject.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/NeutralObject.h
-../Logs/log.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.h
+../Logs/Log.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/Log.h
 UnitType.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/UnitType.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/UnitType.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Archer/Archer.h
-../../../Weapon/Bow.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Bow.h
+../../../Weapon/Weapon.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
 ../../Unit.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h
-../../../Weapon/WeaponFlyWeight.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.h
+../../../Weapon/WeaponFlyweight.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyweight.h
 ../../../Armor/ArmorFlyweight.h
 C:/Users/anton/CLionProjects/BattleForHonour/Armor/ArmorFlyweight.h
 
@@ -251,42 +255,40 @@ C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Druid/Druid.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h
 ../../../Armor/Armor.h
 C:/Users/anton/CLionProjects/BattleForHonour/Armor/Armor.h
-../../../Weapon/AbolishMagic.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/AbolishMagic.h
-../../../Weapon/WeaponFlyWeight.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.h
+../../../Weapon/Weapon.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
+../../../Weapon/WeaponFlyweight.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyweight.h
 ../../../Armor/ArmorFlyweight.h
 C:/Users/anton/CLionProjects/BattleForHonour/Armor/ArmorFlyweight.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Druid/Hermit.h
 Druid.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Druid/Druid.h
-../../../Weapon/AbolishMagic.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/AbolishMagic.h
+../../../Weapon/Weapon.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Infantry/Infantry.h
 ../../Unit.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h
 ../../../Armor/Armor.h
 C:/Users/anton/CLionProjects/BattleForHonour/Armor/Armor.h
-../../../Weapon/WeaponFlyWeight.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.h
+../../../Weapon/WeaponFlyweight.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyweight.h
 ../../../Armor/ArmorFlyweight.h
 C:/Users/anton/CLionProjects/BattleForHonour/Armor/ArmorFlyweight.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Infantry/SwordMan.h
 Infantry.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Units/Infantry/Infantry.h
-../../../Weapon/Sword.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Sword.h
+../../../Weapon/Weapon.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Observers/Observers.h
 ../Objects/Unit.h
 C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.h
-../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
+../GameField/Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Terrains/Terrain.h
 ../Weapon/Weapon.h
@@ -299,8 +301,8 @@ C:/Users/anton/CLionProjects/BattleForHonour/Objects/GameObject.h
 C:/Users/anton/CLionProjects/BattleForHonour/Terrains/TerrainProxy.h
 Terrain.h
 C:/Users/anton/CLionProjects/BattleForHonour/Terrains/Terrain.h
-../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
+../GameField/Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/User/CommandInterpreter.h
 Commands/Command.h
@@ -341,10 +343,10 @@ memory
 -
 sstream
 -
-../../Logs/log.h
-C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.h
-../../GameState.h
-C:/Users/anton/CLionProjects/BattleForHonour/GameState.h
+../../Logs/Log.h
+C:/Users/anton/CLionProjects/BattleForHonour/Logs/Log.h
+../../Game/GameState.h
+C:/Users/anton/CLionProjects/BattleForHonour/Game/GameState.h
 CommandSnapshot.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/CommandSnapshot.h
 
@@ -389,8 +391,8 @@ Command.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/Command.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/LoadCommand.h
-../ConnectCI.h
-C:/Users/anton/CLionProjects/BattleForHonour/User/ConnectCI.h
+../LoadCI.h
+C:/Users/anton/CLionProjects/BattleForHonour/User/LoadCI.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/MoveCommand.h
 Command.h
@@ -421,8 +423,8 @@ C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/Command.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ShowBaseCommand.h
 Command.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/Command.h
-../../Point.h
-C:/Users/anton/CLionProjects/BattleForHonour/Point.h
+../../GameField/Point.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ShowCommand.h
 Command.h
@@ -442,7 +444,7 @@ C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/SkipCommand.h
 Command.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/Command.h
 
-C:/Users/anton/CLionProjects/BattleForHonour/User/ConnectCI.h
+C:/Users/anton/CLionProjects/BattleForHonour/User/LoadCI.h
 Commands/Command.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/Command.h
 Commands/AttackCommand.h
@@ -457,18 +459,8 @@ Commands/ExitCommand.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/ExitCommand.h
 Commands/NewCommand.h
 C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/NewCommand.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/AbolishMagic.h
-Weapon.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Bow.h
-Weapon.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
-
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Sword.h
-Weapon.h
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
+Commands/SkipCommand.h
+C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/SkipCommand.h
 
 C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h
 ostream
@@ -476,7 +468,7 @@ ostream
 WeaponType.h
 C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponType.h
 
-C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.h
+C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyweight.h
 vector
 -
 Weapon.h
@@ -487,16 +479,18 @@ C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponType.h
 C:/Users/anton/CLionProjects/BattleForHonour/main.cpp
 iostream
 -
-GameFacade.h
-C:/Users/anton/CLionProjects/BattleForHonour/GameFacade.h
+Game/GameFacade.h
+C:/Users/anton/CLionProjects/BattleForHonour/Game/GameFacade.h
 Logs/FileLogger.h
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/FileLogger.h
 Logs/CmdLogger.h
 C:/Users/anton/CLionProjects/BattleForHonour/Logs/CmdLogger.h
 GameSettings/BigGame.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/BigGame.h
-GameSettings/SmallGame.h
-C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/SmallGame.h
 GameSettings/MidGame.h
 C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/MidGame.h
+GameSettings/SmallGame.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/SmallGame.h
+GameSettings/HillKing.h
+C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/HillKing.h
 

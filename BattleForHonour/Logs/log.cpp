@@ -1,3 +1,3 @@
-#include "log.h"
+#include "Log.h"
 
-LogProxy game::log = LogProxy();
+LogProxy Log::log = LogProxy();

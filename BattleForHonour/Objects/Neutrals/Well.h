@@ -7,17 +7,18 @@
 
 class Well: public NeutralObject {
 
-
 protected:
-
     void print(std::ostream &stream) const override{
         stream << "WL";
     }
 
 public:
 
-    void applyTo(Unit &unit) override {
-        unit.heal(10*strategy->getUnitTypeFactor());
+    void toEffect(Unit &unit) override {
+        unit.heal(10* strategy->getUnitTypeMultiply());
+        if(unit.getUnitType() == UnitType::ARCHER) {
+            unit.getWeapon() = StarFall();
+        }
     }
 
 };

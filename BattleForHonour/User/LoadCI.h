@@ -1,5 +1,5 @@
-#ifndef BATTLEFORHONOUR_COMMANDINTERPRETER_H
-#define BATTLEFORHONOUR_COMMANDINTERPRETER_H
+#ifndef BATTLEFORHONOUR_LOADCI_H
+#define BATTLEFORHONOUR_LOADCI_H
 
 
 #include "Commands/Command.h"
@@ -8,12 +8,10 @@
 #include "Commands/MoveCommand.h"
 #include "Commands/ShowCommand.h"
 #include "Commands/ExitCommand.h"
-#include "Commands/SaveCommand.h"
-#include "Commands/LoadCommand.h"
 #include "Commands/NewCommand.h"
 #include "Commands/SkipCommand.h"
 
-class CommandInterpreter {
+class LoadCI {
 
 private:
 
@@ -22,58 +20,52 @@ private:
     MoveCommandHandler *moveHandler;
     ShowCommandHandler *showHandler;
     ExitCommandHandler *exitHandler;
-    SaveCommandHandler *saveHandler;
-    LoadCommandHandler *loadHandler;
     NewCommandHandler *newHandler;
     SkipCommandHandler *skipHandler;
 
+
 public:
 
-    CommandInterpreter(){
+    LoadCI(){
         newHandler = new NewCommandHandler();
         attackHandler = new AttackCommandHandler();
         createHandler = new CreateCommandHandler();
         moveHandler = new MoveCommandHandler();
         showHandler = new ShowCommandHandler();
         exitHandler = new ExitCommandHandler();
-        saveHandler = new SaveCommandHandler();
-        loadHandler = new LoadCommandHandler();
         skipHandler = new SkipCommandHandler();
 
         attackHandler->setNext(createHandler);
         createHandler->setNext(moveHandler);
         moveHandler->setNext(showHandler);
         showHandler->setNext(exitHandler);
-        exitHandler->setNext(saveHandler);
-        saveHandler->setNext(loadHandler);
-        loadHandler->setNext(newHandler);
+        exitHandler->setNext(newHandler);
         newHandler->setNext(skipHandler);
     }
 
-    std::unique_ptr<Command> handle(const std::string& commandString){
+    std::unique_ptr<Command> handle(std::string commandString){
 
-        std::vector <std::string> commandSplitted;
+        std::vector <std::string> splitCommands;
         std::stringstream stream(commandString);
         std::string commandWord;
         while (stream >> commandWord)
-            commandSplitted.push_back(commandWord);
+            splitCommands.push_back(commandWord);
 
-        return attackHandler->handle(commandSplitted);
+        return attackHandler->handle(splitCommands);
 
     }
 
-    ~CommandInterpreter(){
-
+    ~LoadCI(){
         delete attackHandler;
         delete createHandler;
         delete moveHandler;
         delete showHandler;
         delete exitHandler;
-        delete saveHandler;
         delete skipHandler;
-
     }
+
 
 };
 
-#endif //BATTLEFORHONOUR_COMMANDINTERPRETER_H
+
+#endif //BATTLEFORHONOUR_LOADCI_H

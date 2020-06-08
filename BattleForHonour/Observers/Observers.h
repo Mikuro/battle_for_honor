@@ -2,7 +2,7 @@
 #define BATTLEFORHONOUR_OBSERVERS_H
 
 #include "../Objects/Unit.h"
-#include "../Point.h"
+#include "../GameField/Point.h"
 
 class Unit;
 
@@ -21,7 +21,7 @@ public:
 class BaseObserver {
 
 public:
-    virtual void onBaseNewUnitCreated(Unit *unit, Point position) = 0;
+    virtual void onBaseNewUnit(Unit *unit, Point position) = 0;
 };
 
 

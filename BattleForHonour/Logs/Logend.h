@@ -2,8 +2,8 @@
 #define BATTLEFORHONOUR_LOGEND_H
 
 
-namespace game {
-    class Logend {};
+namespace Log {
+    class LogEnd {};
 }
 
 #endif //BATTLEFORHONOUR_LOGEND_H

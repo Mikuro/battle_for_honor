@@ -4,16 +4,14 @@
 
 #include "../../Unit.h"
 #include "../../../Armor/Armor.h"
-#include "../../../Weapon/WeaponFlyWeight.h"
+#include "../../../Weapon/WeaponFlyweight.h"
 #include "../../../Armor/ArmorFlyweight.h"
 
 class Infantry: public Unit {
 
 public:
-
     Infantry(Weapon &weapon, int health):
         Unit(UnitType::INFANTRY, *ArmorFlyweight::getFlyweight<PlateMail>(), weapon, health) {}
-
 };
 
 

@@ -95,22 +95,9 @@ CMakeFiles/BattleForHonour.dir/Objects/Unit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BattleForHonour.dir/Objects/Unit.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anton\CLionProjects\BattleForHonour\Objects\Unit.cpp -o CMakeFiles\BattleForHonour.dir\Objects\Unit.cpp.s
 
-CMakeFiles/BattleForHonour.dir/Point.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
-CMakeFiles/BattleForHonour.dir/Point.cpp.obj: ../Point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BattleForHonour.dir/Point.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Point.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Point.cpp
-
-CMakeFiles/BattleForHonour.dir/Point.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BattleForHonour.dir/Point.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\anton\CLionProjects\BattleForHonour\Point.cpp > CMakeFiles\BattleForHonour.dir\Point.cpp.i
-
-CMakeFiles/BattleForHonour.dir/Point.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BattleForHonour.dir/Point.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anton\CLionProjects\BattleForHonour\Point.cpp -o CMakeFiles\BattleForHonour.dir\Point.cpp.s
-
 CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
 CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.obj: ../GameField/FieldCell.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\GameField\FieldCell.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\GameField\FieldCell.cpp
 
 CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.i: cmake_force
@@ -123,7 +110,7 @@ CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.s: cmake_force
 
 CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
 CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.obj: ../Objects/Base.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Objects\Base.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Objects\Base.cpp
 
 CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.i: cmake_force
@@ -136,7 +123,7 @@ CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.s: cmake_force
 
 CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
 CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.obj: ../Objects/GameObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Objects\GameObject.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Objects\GameObject.cpp
 
 CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.i: cmake_force
@@ -149,7 +136,7 @@ CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.s: cmake_force
 
 CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
 CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.obj: ../Terrains/TerrainProxy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Terrains\TerrainProxy.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Terrains\TerrainProxy.cpp
 
 CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.i: cmake_force
@@ -160,44 +147,29 @@ CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anton\CLionProjects\BattleForHonour\Terrains\TerrainProxy.cpp -o CMakeFiles\BattleForHonour.dir\Terrains\TerrainProxy.cpp.s
 
-CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
-CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.obj: ../Weapon/WeaponFlyWeight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Weapon\WeaponFlyWeight.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Weapon\WeaponFlyWeight.cpp
+CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
+CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.obj: ../Logs/Log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Logs\Log.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Logs\Log.cpp
 
-CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\anton\CLionProjects\BattleForHonour\Weapon\WeaponFlyWeight.cpp > CMakeFiles\BattleForHonour.dir\Weapon\WeaponFlyWeight.cpp.i
+CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\anton\CLionProjects\BattleForHonour\Logs\Log.cpp > CMakeFiles\BattleForHonour.dir\Logs\Log.cpp.i
 
-CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anton\CLionProjects\BattleForHonour\Weapon\WeaponFlyWeight.cpp -o CMakeFiles\BattleForHonour.dir\Weapon\WeaponFlyWeight.cpp.s
-
-CMakeFiles/BattleForHonour.dir/Logs/log.cpp.obj: CMakeFiles/BattleForHonour.dir/flags.make
-CMakeFiles/BattleForHonour.dir/Logs/log.cpp.obj: ../Logs/log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/BattleForHonour.dir/Logs/log.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\BattleForHonour.dir\Logs\log.cpp.obj -c C:\Users\anton\CLionProjects\BattleForHonour\Logs\log.cpp
-
-CMakeFiles/BattleForHonour.dir/Logs/log.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BattleForHonour.dir/Logs/log.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\anton\CLionProjects\BattleForHonour\Logs\log.cpp > CMakeFiles\BattleForHonour.dir\Logs\log.cpp.i
-
-CMakeFiles/BattleForHonour.dir/Logs/log.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BattleForHonour.dir/Logs/log.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anton\CLionProjects\BattleForHonour\Logs\log.cpp -o CMakeFiles\BattleForHonour.dir\Logs\log.cpp.s
+CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anton\CLionProjects\BattleForHonour\Logs\Log.cpp -o CMakeFiles\BattleForHonour.dir\Logs\Log.cpp.s
 
 # Object files for target BattleForHonour
 BattleForHonour_OBJECTS = \
 "CMakeFiles/BattleForHonour.dir/main.cpp.obj" \
 "CMakeFiles/BattleForHonour.dir/GameField/GameField.cpp.obj" \
 "CMakeFiles/BattleForHonour.dir/Objects/Unit.cpp.obj" \
-"CMakeFiles/BattleForHonour.dir/Point.cpp.obj" \
 "CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.obj" \
 "CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.obj" \
 "CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.obj" \
 "CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.obj" \
-"CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.obj" \
-"CMakeFiles/BattleForHonour.dir/Logs/log.cpp.obj"
+"CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.obj"
 
 # External object files for target BattleForHonour
 BattleForHonour_EXTERNAL_OBJECTS =
@@ -205,18 +177,16 @@ BattleForHonour_EXTERNAL_OBJECTS =
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/main.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/GameField/GameField.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Objects/Unit.cpp.obj
-BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Point.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/GameField/FieldCell.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Objects/Base.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Objects/GameObject.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Terrains/TerrainProxy.cpp.obj
-BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Weapon/WeaponFlyWeight.cpp.obj
-BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Logs/log.cpp.obj
+BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/Logs/Log.cpp.obj
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/build.make
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/linklibs.rsp
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/objects1.rsp
 BattleForHonour.exe: CMakeFiles/BattleForHonour.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable BattleForHonour.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\anton\CLionProjects\BattleForHonour\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable BattleForHonour.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\BattleForHonour.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

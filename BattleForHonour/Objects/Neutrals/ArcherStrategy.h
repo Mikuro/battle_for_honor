@@ -7,7 +7,7 @@
 class ArcherStrategy: public NeutralObjectStrategy {
 
 public:
-    int getUnitTypeFactor() override {
+    int getUnitTypeMultiply() override {
         return 1;
     }
 };

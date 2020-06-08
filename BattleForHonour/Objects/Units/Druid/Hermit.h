@@ -3,13 +3,13 @@
 
 
 #include "Druid.h"
-#include "../../../Weapon/AbolishMagic.h"
+#include "../../../Weapon/Weapon.h"
 
 class Hermit: public Druid{
 
 public:
     Hermit():
-        Druid(*WeaponFlyWeight::getFlyWeight<AbolishMagic>(), 100){}
+        Druid(*WeaponFlyweight::getFlyWeight<AbolishMagic>(), 100){}
 };
 
 #endif //BATTLEFORHONOUR_HERMIT_H

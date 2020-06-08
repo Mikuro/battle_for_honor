@@ -10,17 +10,13 @@ class Hospital: public NeutralObject {
 protected:
 
     void print(std::ostream &stream) const override{
-
         stream << "HP";
-
     }
 
 public:
 
-    void applyTo(Unit &unit) override {
-
-        unit.heal((int)100*strategy->getUnitTypeFactor());
-
+    void toEffect(Unit &unit) override {
+        unit.heal((int)100* strategy->getUnitTypeMultiply());
     }
 
 };

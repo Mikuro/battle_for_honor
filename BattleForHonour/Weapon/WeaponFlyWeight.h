@@ -5,11 +5,11 @@
 #include <vector>
 #include "Weapon.h"
 
-class WeaponFlyWeight {
+class WeaponFlyweight {
 
 private:
 
-    static WeaponFlyWeight *self;
+    static WeaponFlyweight *self;
     std::vector<Weapon*> weapons;
 
 public:
@@ -17,12 +17,13 @@ public:
     template <typename Type>
     static Type* getFlyWeight(){
 
-        if (!self) self = new WeaponFlyWeight();
+        if (!self)
+            self = new WeaponFlyweight();
 
-        Type needWeapon;
+        Type setWeapon;
         for (auto *weapon: self->weapons){
 
-            if (needWeapon == *weapon){
+            if (setWeapon == *weapon){
                 return static_cast<Type*>(weapon);
             }
         }
@@ -32,6 +33,8 @@ public:
         return tmp;
     }
 };
+
+WeaponFlyweight *WeaponFlyweight::self = nullptr;
 
 
 #endif //BATTLEFORHONOUR_WEAPONFLYWEIGHT_H

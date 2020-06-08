@@ -7,18 +7,15 @@
 
 class Archery: public NeutralObject {
 
-
 protected:
 
     void print(std::ostream &stream) const override{
-
         stream << "AR";
-
     }
 
 public:
 
-    void applyTo(Unit &unit) override {
+    void toEffect(Unit &unit) override {
         CrossBowMan crossbowman;
         unit = crossbowman;
     }

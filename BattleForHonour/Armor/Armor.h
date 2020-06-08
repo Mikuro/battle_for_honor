@@ -16,7 +16,9 @@ public:
 
     Armor(){}
 
-    [[nodiscard]] int controlAbsorb() const { return this->absorbation; }
+    [[nodiscard]] int controlAbsorb() const {
+        return this->absorbation;
+    }
     ArmorType getArmorType(){
         return type;
     }

@@ -3,14 +3,12 @@
 
 #include "../Armor/Armor.h"
 #include "GameObject.h"
-
-
 #include "Unit.h"
 #include "../Observers/Observers.h"
-
 #include <vector>
 #include <iostream>
 #include <algorithm>
+
 
 class Base: public GameObject, public UnitObserver {
 
@@ -24,13 +22,23 @@ protected:
 
 public:
 
-    Base(int health, Armor &armor): GameObject(ObjectType::BASE), health(health), armor(armor) {}
+    Base(int health, Armor &armor):
+        GameObject(ObjectType::BASE),
+        health(health),
+        armor(armor) {}
+
     bool addUnit(Unit *unit, Point position);
     void addObserver(BaseObserver *baseObserver);
 
-    [[nodiscard]] int getHealth() const{ return health; }
-    Armor& getArmor(){ return armor; }
-    [[nodiscard]] int getMaxObjectsCount() const{ return limit; }
+    [[nodiscard]] int getHealth() const{
+        return health;
+    }
+    Armor& getArmor(){
+        return armor;
+    }
+    [[nodiscard]] int getMaxObjectsCount() const{
+        return limit;
+    }
 
     template <typename Type>
     Type *createUnit(Point position);
@@ -41,31 +49,28 @@ public:
     void onUnitHeal(Unit *unit) override;
 
 private:
-
     std::vector<Unit*> units;
-
     int health;
-    const int limit = 5;
+    const int limit = 10;
     Armor &armor;
-
 };
 
-template<typename T>
-T *Base::createUnit(Point position) {
+template<typename Type>
+Type *Base::createUnit(Point position) {
     if (units.size() < limit) {
-        T *unit = new T();
+        Type *unit = new Type();
         units.push_back(unit);
         unit->addObserver(this);
 
-        for (auto bo:baseObservers) bo->onBaseNewUnitCreated(unit, position);
-        game::log << "[#Base] Unit created\n";
+        for (auto elem:baseObservers)
+            elem->onBaseNewUnit(unit, position);
+
+        Log::log << "[#Base] Unit created\n";
 
         return unit;
     } else{
-
-        game::log << "[#Base] Cannot create unit. Limit is exceeded.\n";
+        Log::log << "[#Base] Cannot create unit. Limit is exceeded.\n";
         return nullptr;
-
     }
 }
 

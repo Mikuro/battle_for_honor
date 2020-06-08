@@ -64,16 +64,13 @@ FieldCell &FieldCell::operator=(FieldCell &&other) {
 
 }
 
-FieldCell::FieldCell(const FieldCell &other):
-        object(other.object),
-        terrain(other.terrain){}
+FieldCell::FieldCell(const FieldCell &cell):
+        object(cell.object),
+        terrain(cell.terrain){}
 
-FieldCell &FieldCell::operator=(const FieldCell &other) {
-
-    if (&other == this) return *this;
-
-    object = other.object;
-    terrain = other.terrain;
+FieldCell &FieldCell::operator=(const FieldCell &cell) {
+    object = cell.object;
+    terrain = cell.terrain;
 
     return *this;
 

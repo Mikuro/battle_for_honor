@@ -9,8 +9,8 @@ class NewGameCommand: public Command {
 public:
 
     explicit NewGameCommand(){}
-    void execute(GameState &gameInfo) override{
-        gameInfo.newGame();
+    void execute(GameState &gameState) override{
+        gameState.newGame();
     }
 
 };
@@ -19,13 +19,13 @@ class NewGameCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
         return terminal.size() == 1 && terminal[0] == "game";
     }
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             return std::unique_ptr<Command>(new NewGameCommand());
         }
 

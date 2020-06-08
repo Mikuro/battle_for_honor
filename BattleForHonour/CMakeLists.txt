@@ -11,23 +11,17 @@ add_executable(BattleForHonour
         Objects/Unit.h
         Weapon/Weapon.h
         Armor/Armor.h
-        Point.cpp
-        Point.h
+        GameField/Point.h
         GameField/GameFieldIterator.h
         Objects/Units/Infantry/Infantry.h
-        Weapon/Sword.h
-        Weapon/AbolishMagic.h
-        Weapon/Bow.h
         Weapon/WeaponType.h
         Armor/ArmorType.h
         Objects/Units/Druid/Druid.h
         Objects/Units/Archer/Archer.h
-        Weapon/StarFall.h
         Objects/Units/Infantry/SwordMan.h
         Objects/Units/Archer/CrossBowMan.h
         Objects/Units/Archer/LongBowMan.h
         Objects/Units/Infantry/SpearMan.h
-        Weapon/Spear.h
         Objects/Units/Druid/Priestess.h
         Objects/Units/Druid/Hermit.h
         GameField/FieldCell.cpp
@@ -50,8 +44,7 @@ add_executable(BattleForHonour
         Objects/Neutrals/InfantryStrategy.h
         Objects/Neutrals/DruidStrategy.h
         Armor/ArmorFlyweight.h
-        Weapon/WeaponFlyWeight.h
-        Weapon/WeaponFlyWeight.cpp
+        Weapon/WeaponFlyweight.h
         Observers/Observers.h
         User/Commands/Command.h
         User/Commands/CreateBaseCommand.h
@@ -63,8 +56,8 @@ add_executable(BattleForHonour
         User/Commands/CreateCommand.h
         User/Commands/MoveCommand.h
         User/Commands/SkipCommand.h
-        GameFacade.h
-        GameState.h
+        Game/GameFacade.h
+        Game/GameState.h
         User/Commands/AttackCommand.h
         User/Commands/AttackUnitCommand.h
         Logs/LogProxy.h
@@ -72,16 +65,15 @@ add_executable(BattleForHonour
         Logs/FileLogger.h
         Logs/CmdLogger.h
         Logs/NoLogger.h
-        Logs/LogFormat.h
-        Logs/NoFormat.h
-        Logs/log.h
+        Logs/LogString.h
+        Logs/Log.h
         User/Commands/ExitCommand.h
-        Logs/Logend.h
+        Logs/LogEnd.h
         User/Commands/SaveCommand.h
         User/Commands/LoadCommand.h
         User/Commands/CommandSnapshot.h
         User/CommandInterpreter.h
-        User/ConnectCI.h
+        User/LoadCI.h
         GameSettings/SmallGame.h
         GameSettings/MidGame.h
         GameSettings/GameRule.h
@@ -89,5 +81,6 @@ add_executable(BattleForHonour
         User/Commands/NewGameCommand.h
         GameSettings/PlayerState.h
         GameSettings/BigGame.h
+        GameSettings/HillKing.h
         Exceptions/StackExceptions.h
-        Objects/UnitType.h User/Commands/SkipCommand.h Logs/log.cpp)
+        Objects/UnitType.h User/Commands/SkipCommand.h Logs/Log.cpp Objects/ObjectType.h GameSettings/HillKing.h)

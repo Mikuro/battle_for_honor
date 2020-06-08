@@ -3,7 +3,7 @@
 
 
 #include <iterator>
-#include "../Point.h"
+#include "Point.h"
 #include "FieldCell.h"
 
 class GameFieldIterator: public std::iterator<std::input_iterator_tag, FieldCell>{
@@ -39,7 +39,9 @@ public:
     bool operator==(const GameFieldIterator &sub) {
         return cpoint == sub.point;
     };
-    typename GameFieldIterator::reference operator*() { return  field[point.y][point.x]; };
+    typename GameFieldIterator::reference operator*() {
+        return  field[point.y][point.x];
+    };
 
     GameFieldIterator&  operator++() {
 
@@ -48,13 +50,13 @@ public:
 
         if (next.x < fieldWidth) {
             point = next;
+
             return *this;
         } else{
-
             next.x = 0;
             next.y++;
-
             point = next;
+
             return *this;
         }
 

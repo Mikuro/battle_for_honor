@@ -3,7 +3,7 @@
 
 
 #include "Command.h"
-#include "../../Point.h"
+#include "../../GameField/Point.h"
 
 class ShowBaseCommand: public Command {
 
@@ -21,13 +21,13 @@ public:
 
             auto base = dynamic_cast<Base*>(object);
             std::cout << "Base: " << std::endl
-                      << "\tHP: " << base->getHealth() << std::endl
-                      << "\tArmor: " << base->getArmor() << std::endl
-                      << "\tMax Objects Count: " << base->getMaxObjectsCount() << std::endl;
-            game::log << "Show base command" << game::logend;
+                      << "HP: " << base->getHealth() << std::endl
+                      << "Armor: " << base->getArmor() << std::endl
+                      << "Max Objects Count: " << base->getMaxObjectsCount() << std::endl;
+            Log::log << "Show base command" << Log::logend;
 
         } else{
-            game::log << "Empty cell" << game::logend;
+            Log::log << "Empty cell" << Log::logend;
         }
 
     }
@@ -38,7 +38,7 @@ class ShowBaseCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
 
         return terminal.size() == 3 && terminal[0] == "base";
 
@@ -46,7 +46,7 @@ public:
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             int x = convertStr(terminal[1]);
             int y = convertStr(terminal[2]);
             Point basePosition(x, y);

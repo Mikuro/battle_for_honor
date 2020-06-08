@@ -17,12 +17,9 @@ public:
 class OutOfRangeExc: std::exception {
 
 public:
-
     int x;
     int y;
-
     OutOfRangeExc(int x, int y): x(x), y(y){}
-
 };
 
 class DoublePlacingExc: std::exception {

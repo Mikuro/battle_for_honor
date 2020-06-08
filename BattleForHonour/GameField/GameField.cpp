@@ -8,14 +8,29 @@ GameField::GameField():
         field(nullptr)
 {}
 
-GameField::GameField(int fieldSize):
-        fieldHeight(fieldSize),
-        fieldWidth(fieldSize)
-{
+void GameField::setBorders(){
+    int i;
+    int j;
+    for(i = 0, j = 0; i < fieldHeight; i++) {
+        Border *border;
+        field[i][j].setTerrain(border);
+        field[i][j].changeMovable(false);
+    }
+    for(i = 0, j = 0; j < fieldWidth; j++) {
+        Border *border;
+        field[i][j].setTerrain(border);
+        field[i][j].changeMovable(false);
+    }
 
-    field = new FieldCell* [fieldSize];
-    for (int i = 0; i < fieldSize; i++){
-        field[i] = new FieldCell [fieldSize];
+    for(i = 0, j = fieldWidth - 1; j >= 0; j--) {
+        Border *border;
+        field[i][j].setTerrain(border);
+        field[i][j].changeMovable(false);
+    }
+    for(i = fieldHeight - 1, j = 0; j < fieldWidth; j++) {
+        Border *border;
+        field[i][j].setTerrain(border);
+        field[i][j].changeMovable(false);
     }
 }
 
@@ -41,7 +56,7 @@ void GameField::deleteObject(int x, int y) {
 bool GameField::addObject(GameObject *object, int x, int y) {
 
     if (object->isOnField){
-        game::log << "[#GameField] Impossible addition of " << *object << " on field" << game::logend;
+        Log::log << "[#GameField] Impossible addition of " << *object << " on field" << Log::logend;
         throw DoublePlacingExc();
     }
 
@@ -50,12 +65,12 @@ bool GameField::addObject(GameObject *object, int x, int y) {
     if (isInBorder && field[y][x].isEmpty()){
 
         field[y][x].setObject(object);
-        object->position = Point(x, y);
+        object->pos = Point(x, y);
         object->isOnField = true;
 
     } else{
 
-        game::log << "[#GameField] Impossible addition of " << *object << " on field" << game::logend;
+        Log::log << "[#GameField] Impossible addition of " << *object << " on field" << Log::logend;
         throw OutOfRangeExc(x, y);
 
     }
@@ -64,7 +79,7 @@ bool GameField::addObject(GameObject *object, int x, int y) {
 }
 
 void GameField::deleteObject(GameObject *object) {
-    deleteObject(object->position.x, object->position.y);
+    deleteObject(object->pos.x, object->pos.y);
 }
 
 void GameField::moveObject(const Point &p1, const Point &p2) {
@@ -72,12 +87,12 @@ void GameField::moveObject(const Point &p1, const Point &p2) {
     if (checkBorder(p1) && checkBorder(p2) && !field[p1.y][p1.x].isEmpty() && field[p2.y][p2.x].isEmpty()){
 
         field[p2.y][p2.x] = std::move(field[p1.y][p1.x]);
-        field[p2.y][p2.x].getObject()->position = p2;
+        field[p2.y][p2.x].getObject()->pos = p2;
         field[p1.y][p1.x].eraseObject();
 
     } else{
 
-        game::log << "[#GameField] Impossible to move object from " << p1.x << " " << p1.y << " to " << p2.x << " " << p2.y << game::logend;
+        Log::log << "[#GameField] Impossible to move object from " << p1.x << " " << p1.y << " to " << p2.x << " " << p2.y << Log::logend;
         throw ImpossibleMoveExc();
 
     }
@@ -95,6 +110,12 @@ FieldCell *GameField::getCell(const Point &p) const{
     if (p.x < fieldWidth && p.y < fieldHeight)
         return &field[p.y][p.x];
     throw OutOfRangeExc(p.x, p.y);
+}
+
+FieldCell *GameField::getCell(const int x, const int y) {
+    if (x < fieldWidth && y < fieldHeight)
+        return &field[y][x];
+    throw OutOfRangeExc(x, y);
 }
 
 GameField::~GameField() {
@@ -166,17 +187,17 @@ bool GameField::addObject(GameObject *object, Point position) {
     return addObject(object, position.x, position.y);
 }
 
-void GameField::onBaseNewUnitCreated(Unit *unit, Point position) {
+void GameField::onBaseNewUnit(Unit *unit, Point pos) {
 
-    bool isPossibleAdd = addObject(unit, position);
+    bool isPossibleAdd = addObject(unit, pos);
     if (isPossibleAdd)
         unit->addObserver(this);
 
 }
 
-bool GameField::addBase(Base *base, Point position) {
+bool GameField::addBase(Base *base, Point pos) {
 
-    return addBase(base, position.x, position.y);
+    return addBase(base, pos.x, pos.y);
 
 }
 
@@ -208,3 +229,4 @@ void GameField::onUnitAttack(Unit *unit, Unit *enemy) {
 bool GameField::checkBorder(const Point &p) const {
     return p.x >= 0 && p.y >= 0 && p.x < fieldWidth && p.y < fieldHeight;
 }
+

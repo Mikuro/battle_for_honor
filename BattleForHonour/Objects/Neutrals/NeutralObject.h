@@ -17,8 +17,10 @@ public:
     NeutralObject():
         GameObject(ObjectType::NEUTRAL_OBJECT){}
 
-    void setStrategy(NeutralObjectStrategy *strategy) { this->strategy = strategy; }
-    virtual void applyTo(Unit &unit)=0;
+    void setStrategy(NeutralObjectStrategy *strategy) {
+        this->strategy = strategy;
+    }
+    virtual void toEffect(Unit &unit)=0;
 
     virtual ~NeutralObject(){
 

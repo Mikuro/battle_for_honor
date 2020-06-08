@@ -92,7 +92,10 @@
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Exceptions/StackExceptions.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameFacade.h">
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Game/GameFacade.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Game/GameState.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/FieldCell.cpp">
@@ -110,10 +113,16 @@
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/GameFieldIterator.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameField/Point.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/BigGame.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/GameRule.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/HillKing.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/MidGame.h">
@@ -125,37 +134,31 @@
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameSettings/SmallGame.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/GameState.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/CmdLogger.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/FileLogger.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogFormat.h">
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/Log.cpp">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/Log.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogEnd.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogProxy.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logend.h">
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/LogString.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/Logger.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoFormat.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/NoLogger.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.cpp">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Logs/log.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Base.cpp">
@@ -197,6 +200,9 @@
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Neutrals/Well.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/ObjectType.h">
+			<Option target="BattleForHonour"/>
+		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Objects/Unit.cpp">
 			<Option target="BattleForHonour"/>
 		</Unit>
@@ -234,12 +240,6 @@
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Observers/Observers.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Point.cpp">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Point.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Terrains/Terrain.h">
@@ -308,31 +308,13 @@
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/Commands/SkipCommand.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/ConnectCI.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/AbolishMagic.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Bow.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Spear.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/StarFall.h">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Sword.h">
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/User/LoadCI.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/Weapon.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.cpp">
-			<Option target="BattleForHonour"/>
-		</Unit>
-		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyWeight.h">
+		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponFlyweight.h">
 			<Option target="BattleForHonour"/>
 		</Unit>
 		<Unit filename="C:/Users/anton/CLionProjects/BattleForHonour/Weapon/WeaponType.h">

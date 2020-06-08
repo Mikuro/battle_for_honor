@@ -21,7 +21,7 @@ public:
     void execute(GameState &gameState) override{
 
         if (!gameState.getNowPlayerBase()){
-            game::log << "Can't create a unit without a base" << game::logend;
+            Log::log << "Can't create a unit without a base" << Log::logend;
             return;
         }
 
@@ -38,7 +38,7 @@ public:
                 break;
 
         }
-        game::log << "Command to create a unit " << game::logend;
+        Log::log << "Command to create a unit " << Log::logend;
 
     }
 
@@ -56,7 +56,7 @@ class CreateUnitCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
 
         return terminal.size() == 4 && terminal[0] == "unit";
 
@@ -64,7 +64,7 @@ public:
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override {
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             int x = convertStr(terminal[1]);
             int y = convertStr(terminal[2]);
             auto type = static_cast<UnitType>(std::stoi(terminal[3]));
@@ -72,7 +72,8 @@ public:
             return std::unique_ptr<Command>(new CreateUnitCommand(basePos, type));
         }
 
-        if (next) return next->handle(terminal);
+        if (next)
+            return next->handle(terminal);
         return std::make_unique<Command>();
 
     }

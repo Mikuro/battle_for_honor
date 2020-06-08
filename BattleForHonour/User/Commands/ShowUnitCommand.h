@@ -20,10 +20,10 @@ public:
 
             auto unit = dynamic_cast<Unit*>(object);
             std::cout << "Unit: " << std::endl
-                      << "\nHP: " << unit->getHealth() << std::endl
-                      << "\nArmor: " << unit->getArmor() << std::endl
-                      << "\nWeapon: " << unit->getWeapon() << std::endl
-                      << "\nUnit class: ";
+                      << "HP: " << unit->getHealth() << std::endl
+                      << "Armor: " << unit->getArmor() << std::endl
+                      << "Weapon: " << unit->getWeapon() << std::endl
+                      << "Unit class: ";
             switch(unit->getUnitType()){
                 case UnitType::ARCHER:
                     std::cout << "Archer" << std::endl;
@@ -36,10 +36,10 @@ public:
                     break;
             }
 
-            game::log << "Command show unit" << game::logend;
+            Log::log << "Command show unit" << Log::logend;
 
         } else{
-            game::log << "Empty cell" << game::logend;
+            Log::log << "Empty cell" << Log::logend;
         }
 
     }
@@ -50,7 +50,7 @@ class ShowUnitCommandHandler: public CommandHandler{
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
 
         return terminal.size() == 3 && terminal[0] == "unit";
 
@@ -58,7 +58,7 @@ public:
 
     virtual std::unique_ptr<Command> handle(std::vector<std::string> &terminal){
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             int x = convertStr(terminal[1]);
             int y = convertStr(terminal[2]);
             Point unitPosition(x, y);

@@ -155,5 +155,12 @@ public:
 
 };
 
+class Border: public Terrain {
+
+public:
+    void print(std::ostream &stream) const override {
+        stream << "+";
+    }
+};
 
 #endif //BATTLEFORHONOUR_TERRAIN_H

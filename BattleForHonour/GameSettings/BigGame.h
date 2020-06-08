@@ -8,27 +8,30 @@
 class BigGame: public GameRule {
 
 private:
-
     PlayerState* nowState;
-
 public:
 
-    BigGame(): GameRule( 15, 15), nowState(new FirstPlayer){}
-
-    bool isOver(GameState &gameInfo) override {
-        return false;
+    BigGame():
+        GameRule( 15, 15),
+        nowState(new FirstPlayer){}
+    bool isOver(GameState &gameState) override {
+        int liveCount = gameState.getBases().size();
+        for (auto b: gameState.getBases()){
+            if (b && b->getHealth() <= 0){
+                liveCount--;
+            }
+        }
+        return liveCount <= 1;
     }
 
-    int nextUser(GameState &gameInfo) override {
-        int nowPlayerIndex = gameInfo.getNowPlayerIndex()+nowState->getNextPlayerDelta();
-        nowPlayerIndex %= gameInfo.getBases().size();
+    int nextUser(GameState &gameState) override {
+        int currUserPos = (gameState.getNowPlayerIndex() + nowState->getNextPlayerRecr()) % gameState.getBases().size();
         auto nextState = nowState->getNextPlayerState();
         delete nowState;
         nowState = nextState;
         if (nowState == nullptr)
             nowState = new FirstPlayer;
-        return nowPlayerIndex;
-
+        return currUserPos;
     }
 
 };

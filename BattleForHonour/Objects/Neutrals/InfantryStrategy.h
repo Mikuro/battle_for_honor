@@ -7,7 +7,7 @@
 class InfantryStrategy: public NeutralObjectStrategy {
 
 public:
-    int getUnitTypeFactor() override {
+    int getUnitTypeMultiply() override {
         return 3;
     }
 };

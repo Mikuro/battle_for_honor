@@ -13,15 +13,23 @@ private:
 
 public:
 
-    MidGame(): GameRule(10, 10), nowState(new FirstPlayer){}
+    MidGame():
+        GameRule(10, 10),
+        nowState(new FirstPlayer){}
 
-    bool isOver(GameState &gameInfo) override {
-        return false;
+    bool isOver(GameState &gameState) override {
+        int liveCount = gameState.getBases().size();
+        for (auto b: gameState.getBases()){
+            if (b && b->getHealth() <= 0){
+                liveCount--;
+            }
+        }
+
+        return liveCount <= 1;
     }
 
-    int nextUser(GameState &gameInfo) override {
-        int nowPlayerIndex = gameInfo.getNowPlayerIndex()+nowState->getNextPlayerDelta();
-        nowPlayerIndex %= gameInfo.getBases().size();
+    int nextUser(GameState &gameState) override {
+        int nowPlayerIndex = (gameState.getNowPlayerIndex() + nowState->getNextPlayerRecr()) % gameState.getBases().size();
         auto nextState = nowState->getNextPlayerState();
         delete nowState;
         nowState = nextState;

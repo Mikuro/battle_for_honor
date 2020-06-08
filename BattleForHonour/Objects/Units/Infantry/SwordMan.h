@@ -3,15 +3,13 @@
 
 
 #include "Infantry.h"
-#include "../../../Weapon/Sword.h"
+#include "../../../Weapon/Weapon.h"
 
 class SwordMan: public Infantry{
 
 public:
-
     SwordMan():
-        Infantry(*WeaponFlyWeight::getFlyWeight<Sword>(), 100){}
-
+        Infantry(*WeaponFlyweight::getFlyWeight<Sword>(), 100){}
 };
 
 

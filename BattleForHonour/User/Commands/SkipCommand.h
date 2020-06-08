@@ -6,7 +6,7 @@
 class SkipCommand: public Command{
 
     void execute(GameState &gameState) override{
-        game::log << "[#User] " << gameState.getNowPlayerIndex() <<" skiped turn" << game::logend;
+        Log::log << "[#User] " << gameState.getNowPlayerIndex() << " skiped turn" << Log::logend;
     }
 
 };
@@ -15,13 +15,13 @@ class SkipCommandHandler: public CommandHandler {
 
 public:
 
-    bool canHandle(std::vector<std::string> &terminal) override{
+    bool isHandle(std::vector<std::string> &terminal) override{
         return terminal.size() == 1 && terminal[0] == "skip";
     }
 
     std::unique_ptr<Command> handle(std::vector<std::string> &terminal) override{
 
-        if (canHandle(terminal)){
+        if (isHandle(terminal)){
             terminal.erase(terminal.begin());
             return std::unique_ptr<Command>(new SkipCommand());
         }
